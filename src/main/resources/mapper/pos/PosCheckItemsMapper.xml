@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shiji.mapper.pos.PosCheckItemsMapper">
+	<resultMap id="BaseResultMap" type="com.shiji.entity.PosCheckItems">
+		<id column="citm_id" jdbcType="CHAR" property="citmId"/>
+		<result column="citm_bday_id" jdbcType="CHAR" property="citmBdayId"/>
+		<result column="citm_bper_id" jdbcType="CHAR" property="citmBperId"/>
+		<result column="citm_shop_id" jdbcType="INTEGER" property="citmShopId"/>
+		<result column="citm_olet_id" jdbcType="INTEGER" property="citmOletId"/>
+		<result column="citm_chks_id" jdbcType="CHAR" property="citmChksId"/>
+		<result column="citm_cpty_id" jdbcType="CHAR" property="citmCptyId"/>
+		<result column="citm_item_id" jdbcType="INTEGER" property="citmItemId"/>
+		<result column="citm_code" jdbcType="VARCHAR" property="citmCode"/>
+		<result column="citm_name_l1" jdbcType="VARCHAR" property="citmNameL1"/>
+		<result column="citm_name_l2" jdbcType="VARCHAR" property="citmNameL2"/>
+		<result column="citm_name_l3" jdbcType="VARCHAR" property="citmNameL3"/>
+		<result column="citm_name_l4" jdbcType="VARCHAR" property="citmNameL4"/>
+		<result column="citm_name_l5" jdbcType="VARCHAR" property="citmNameL5"/>
+		<result column="citm_short_name_l1" jdbcType="VARCHAR" property="citmShortNameL1"/>
+		<result column="citm_short_name_l2" jdbcType="VARCHAR" property="citmShortNameL2"/>
+		<result column="citm_short_name_l3" jdbcType="VARCHAR" property="citmShortNameL3"/>
+		<result column="citm_short_name_l4" jdbcType="VARCHAR" property="citmShortNameL4"/>
+		<result column="citm_short_name_l5" jdbcType="VARCHAR" property="citmShortNameL5"/>
+		<result column="citm_parent_citm_id" jdbcType="CHAR" property="citmParentCitmId"/>
+		<result column="citm_role" jdbcType="CHAR" property="citmRole"/>
+		<result column="citm_child_count" jdbcType="INTEGER" property="citmChildCount"/>
+		<result column="citm_modifier_count" jdbcType="INTEGER" property="citmModifierCount"/>
+		<result column="citm_seat" jdbcType="INTEGER" property="citmSeat"/>
+		<result column="citm_mix_and_match_citm_id" jdbcType="CHAR" property="citmMixAndMatchCitmId"/>
+		<result column="citm_seq" jdbcType="INTEGER" property="citmSeq"/>
+		<result column="citm_round_total" jdbcType="DECIMAL" property="citmRoundTotal"/>
+		<result column="citm_total" jdbcType="DOUBLE" property="citmTotal"/>
+		<result column="citm_round_amount" jdbcType="DOUBLE" property="citmRoundAmount"/>
+		<result column="citm_carry_total" jdbcType="DOUBLE" property="citmCarryTotal"/>
+		<result column="citm_qty" jdbcType="DOUBLE" property="citmQty"/>
+		<result column="citm_base_qty" jdbcType="DOUBLE" property="citmBaseQty"/>
+		<result column="citm_price" jdbcType="DOUBLE" property="citmPrice"/>
+		<result column="citm_original_price" jdbcType="DOUBLE" property="citmOriginalPrice"/>
+		<result column="citm_basic_price" jdbcType="DOUBLE" property="citmBasicPrice"/>
+		<result column="citm_basic_calculate_method" jdbcType="CHAR" property="citmBasicCalculateMethod"/>
+		<result column="citm_sc1" jdbcType="DOUBLE" property="citmSc1"/>
+		<result column="citm_sc2" jdbcType="DOUBLE" property="citmSc2"/>
+		<result column="citm_sc3" jdbcType="DOUBLE" property="citmSc3"/>
+		<result column="citm_sc4" jdbcType="DOUBLE" property="citmSc4"/>
+		<result column="citm_sc5" jdbcType="DOUBLE" property="citmSc5"/>
+		<result column="citm_tax1" jdbcType="DOUBLE" property="citmTax1"/>
+		<result column="citm_tax2" jdbcType="DOUBLE" property="citmTax2"/>
+		<result column="citm_tax3" jdbcType="DOUBLE" property="citmTax3"/>
+		<result column="citm_tax4" jdbcType="DOUBLE" property="citmTax4"/>
+		<result column="citm_tax5" jdbcType="DOUBLE" property="citmTax5"/>
+		<result column="citm_tax6" jdbcType="DOUBLE" property="citmTax6"/>
+		<result column="citm_tax7" jdbcType="DOUBLE" property="citmTax7"/>
+		<result column="citm_tax8" jdbcType="DOUBLE" property="citmTax8"/>
+		<result column="citm_tax9" jdbcType="DOUBLE" property="citmTax9"/>
+		<result column="citm_tax10" jdbcType="DOUBLE" property="citmTax10"/>
+		<result column="citm_tax11" jdbcType="DOUBLE" property="citmTax11"/>
+		<result column="citm_tax12" jdbcType="DOUBLE" property="citmTax12"/>
+		<result column="citm_tax13" jdbcType="DOUBLE" property="citmTax13"/>
+		<result column="citm_tax14" jdbcType="DOUBLE" property="citmTax14"/>
+		<result column="citm_tax15" jdbcType="DOUBLE" property="citmTax15"/>
+		<result column="citm_tax16" jdbcType="DOUBLE" property="citmTax16"/>
+		<result column="citm_tax17" jdbcType="DOUBLE" property="citmTax17"/>
+		<result column="citm_tax18" jdbcType="DOUBLE" property="citmTax18"/>
+		<result column="citm_tax19" jdbcType="DOUBLE" property="citmTax19"/>
+		<result column="citm_tax20" jdbcType="DOUBLE" property="citmTax20"/>
+		<result column="citm_tax21" jdbcType="DOUBLE" property="citmTax21"/>
+		<result column="citm_tax22" jdbcType="DOUBLE" property="citmTax22"/>
+		<result column="citm_tax23" jdbcType="DOUBLE" property="citmTax23"/>
+		<result column="citm_tax24" jdbcType="DOUBLE" property="citmTax24"/>
+		<result column="citm_tax25" jdbcType="DOUBLE" property="citmTax25"/>
+		<result column="citm_incl_tax_ref1" jdbcType="DOUBLE" property="citmInclTaxRef1"/>
+		<result column="citm_incl_tax_ref2" jdbcType="DOUBLE" property="citmInclTaxRef2"/>
+		<result column="citm_incl_tax_ref3" jdbcType="DOUBLE" property="citmInclTaxRef3"/>
+		<result column="citm_incl_tax_ref4" jdbcType="DOUBLE" property="citmInclTaxRef4"/>
+		<result column="citm_pre_disc" jdbcType="DOUBLE" property="citmPreDisc"/>
+		<result column="citm_mid_disc" jdbcType="DOUBLE" property="citmMidDisc"/>
+		<result column="citm_post_disc" jdbcType="DOUBLE" property="citmPostDisc"/>
+		<result column="citm_original_price_level" jdbcType="INTEGER" property="citmOriginalPriceLevel"/>
+		<result column="citm_price_level" jdbcType="INTEGER" property="citmPriceLevel"/>
+		<result column="citm_revenue" jdbcType="DOUBLE" property="citmRevenue"/>
+		<result column="citm_carry_revenue" jdbcType="DOUBLE" property="citmCarryRevenue"/>
+		<result column="citm_unit_cost" jdbcType="DECIMAL" property="citmUnitCost"/>
+		<result column="citm_print_queue1_itpq_id" jdbcType="INTEGER" property="citmPrintQueue1ItpqId"/>
+		<result column="citm_print_queue2_itpq_id" jdbcType="INTEGER" property="citmPrintQueue2ItpqId"/>
+		<result column="citm_print_queue3_itpq_id" jdbcType="INTEGER" property="citmPrintQueue3ItpqId"/>
+		<result column="citm_print_queue4_itpq_id" jdbcType="INTEGER" property="citmPrintQueue4ItpqId"/>
+		<result column="citm_print_queue5_itpq_id" jdbcType="INTEGER" property="citmPrintQueue5ItpqId"/>
+		<result column="citm_print_queue6_itpq_id" jdbcType="INTEGER" property="citmPrintQueue6ItpqId"/>
+		<result column="citm_print_queue7_itpq_id" jdbcType="INTEGER" property="citmPrintQueue7ItpqId"/>
+		<result column="citm_print_queue8_itpq_id" jdbcType="INTEGER" property="citmPrintQueue8ItpqId"/>
+		<result column="citm_print_queue9_itpq_id" jdbcType="INTEGER" property="citmPrintQueue9ItpqId"/>
+		<result column="citm_print_queue10_itpq_id" jdbcType="INTEGER" property="citmPrintQueue10ItpqId"/>
+		<result column="citm_no_print" jdbcType="CHAR" property="citmNoPrint"/>
+		<result column="citm_charge_sc1" jdbcType="CHAR" property="citmChargeSc1"/>
+		<result column="citm_charge_sc2" jdbcType="CHAR" property="citmChargeSc2"/>
+		<result column="citm_charge_sc3" jdbcType="CHAR" property="citmChargeSc3"/>
+		<result column="citm_charge_sc4" jdbcType="CHAR" property="citmChargeSc4"/>
+		<result column="citm_charge_sc5" jdbcType="CHAR" property="citmChargeSc5"/>
+		<result column="citm_charge_tax1" jdbcType="CHAR" property="citmChargeTax1"/>
+		<result column="citm_charge_tax2" jdbcType="CHAR" property="citmChargeTax2"/>
+		<result column="citm_charge_tax3" jdbcType="CHAR" property="citmChargeTax3"/>
+		<result column="citm_charge_tax4" jdbcType="CHAR" property="citmChargeTax4"/>
+		<result column="citm_charge_tax5" jdbcType="CHAR" property="citmChargeTax5"/>
+		<result column="citm_charge_tax6" jdbcType="CHAR" property="citmChargeTax6"/>
+		<result column="citm_charge_tax7" jdbcType="CHAR" property="citmChargeTax7"/>
+		<result column="citm_charge_tax8" jdbcType="CHAR" property="citmChargeTax8"/>
+		<result column="citm_charge_tax9" jdbcType="CHAR" property="citmChargeTax9"/>
+		<result column="citm_charge_tax10" jdbcType="CHAR" property="citmChargeTax10"/>
+		<result column="citm_charge_tax11" jdbcType="CHAR" property="citmChargeTax11"/>
+		<result column="citm_charge_tax12" jdbcType="CHAR" property="citmChargeTax12"/>
+		<result column="citm_charge_tax13" jdbcType="CHAR" property="citmChargeTax13"/>
+		<result column="citm_charge_tax14" jdbcType="CHAR" property="citmChargeTax14"/>
+		<result column="citm_charge_tax15" jdbcType="CHAR" property="citmChargeTax15"/>
+		<result column="citm_charge_tax16" jdbcType="CHAR" property="citmChargeTax16"/>
+		<result column="citm_charge_tax17" jdbcType="CHAR" property="citmChargeTax17"/>
+		<result column="citm_charge_tax18" jdbcType="CHAR" property="citmChargeTax18"/>
+		<result column="citm_charge_tax19" jdbcType="CHAR" property="citmChargeTax19"/>
+		<result column="citm_charge_tax20" jdbcType="CHAR" property="citmChargeTax20"/>
+		<result column="citm_charge_tax21" jdbcType="CHAR" property="citmChargeTax21"/>
+		<result column="citm_charge_tax22" jdbcType="CHAR" property="citmChargeTax22"/>
+		<result column="citm_charge_tax23" jdbcType="CHAR" property="citmChargeTax23"/>
+		<result column="citm_charge_tax24" jdbcType="CHAR" property="citmChargeTax24"/>
+		<result column="citm_charge_tax25" jdbcType="CHAR" property="citmChargeTax25"/>
+		<result column="citm_hide" jdbcType="CHAR" property="citmHide"/>
+		<result column="citm_original_olet_id" jdbcType="INTEGER" property="citmOriginalOletId"/>
+		<result column="citm_icat_id" jdbcType="INTEGER" property="citmIcatId"/>
+		<result column="citm_idep_id" jdbcType="INTEGER" property="citmIdepId"/>
+		<result column="citm_icou_id" jdbcType="INTEGER" property="citmIcouId"/>
+		<result column="citm_digp_id" jdbcType="INTEGER" property="citmDigpId"/>
+		<result column="citm_get_revenue" jdbcType="CHAR" property="citmGetRevenue"/>
+		<result column="citm_serving_status" jdbcType="CHAR" property="citmServingStatus"/>
+		<result column="citm_pending" jdbcType="CHAR" property="citmPending"/>
+		<result column="citm_ordering_type" jdbcType="CHAR" property="citmOrderingType"/>
+		<result column="citm_round_status" jdbcType="CHAR" property="citmRoundStatus"/>
+		<result column="citm_order_time" jdbcType="TIMESTAMP" property="citmOrderTime"/>
+		<result column="citm_order_loctime" jdbcType="TIMESTAMP" property="citmOrderLoctime"/>
+		<result column="citm_order_user_id" jdbcType="INTEGER" property="citmOrderUserId"/>
+		<result column="citm_order_stat_id" jdbcType="INTEGER" property="citmOrderStatId"/>
+		<result column="citm_rush_time" jdbcType="TIMESTAMP" property="citmRushTime"/>
+		<result column="citm_rush_loctime" jdbcType="TIMESTAMP" property="citmRushLoctime"/>
+		<result column="citm_rush_user_id" jdbcType="INTEGER" property="citmRushUserId"/>
+		<result column="citm_rush_stat_id" jdbcType="INTEGER" property="citmRushStatId"/>
+		<result column="citm_rush_count" jdbcType="INTEGER" property="citmRushCount"/>
+		<result column="citm_delivery_time" jdbcType="TIMESTAMP" property="citmDeliveryTime"/>
+		<result column="citm_void_time" jdbcType="TIMESTAMP" property="citmVoidTime"/>
+		<result column="citm_void_loctime" jdbcType="TIMESTAMP" property="citmVoidLoctime"/>
+		<result column="citm_void_user_id" jdbcType="INTEGER" property="citmVoidUserId"/>
+		<result column="citm_void_stat_id" jdbcType="INTEGER" property="citmVoidStatId"/>
+		<result column="citm_void_vdrs_id" jdbcType="INTEGER" property="citmVoidVdrsId"/>
+		<result column="citm_void_consumed" jdbcType="CHAR" property="citmVoidConsumed"/>
+		<result column="citm_status" jdbcType="CHAR" property="citmStatus"/>
+		<result column="citm_slave_id" jdbcType="INTEGER" property="citmSlaveId"/>
+		<result column="citm_slave_created" jdbcType="TIMESTAMP" property="citmSlaveCreated"/>
+		<result column="citm_slave_modified" jdbcType="TIMESTAMP" property="citmSlaveModified"/>
+		<result column="citm_sync_id" jdbcType="INTEGER" property="citmSyncId"/>
+		<result column="created" jdbcType="TIMESTAMP" property="created"/>
+		<result column="modified" jdbcType="TIMESTAMP" property="modified"/>
+	</resultMap>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from pos_check_items
+		where citm_id = #{citmId,jdbcType=CHAR}
+	</delete>
+	<sql id="posCheckItems">citm_id, citm_bday_id, citm_bper_id,
+		citm_shop_id, citm_olet_id, citm_chks_id,
+		citm_cpty_id, citm_item_id, citm_code,
+		citm_name_l1, citm_name_l2, citm_name_l3,
+		citm_name_l4, citm_name_l5, citm_short_name_l1,
+		citm_short_name_l2, citm_short_name_l3, citm_short_name_l4,
+		citm_short_name_l5, citm_parent_citm_id, citm_role,
+		citm_child_count, citm_modifier_count, citm_seat,
+		citm_mix_and_match_citm_id, citm_seq, citm_round_total,
+		citm_total, citm_round_amount, citm_carry_total,
+		citm_qty, citm_base_qty, citm_price,
+		citm_original_price, citm_basic_price, citm_basic_calculate_method,
+		citm_sc1, citm_sc2, citm_sc3,
+		citm_sc4, citm_sc5, citm_tax1,
+		citm_tax2, citm_tax3, citm_tax4,
+		citm_tax5, citm_tax6, citm_tax7,
+		citm_tax8, citm_tax9, citm_tax10,
+		citm_tax11, citm_tax12, citm_tax13,
+		citm_tax14, citm_tax15, citm_tax16,
+		citm_tax17, citm_tax18, citm_tax19,
+		citm_tax20, citm_tax21, citm_tax22,
+		citm_tax23, citm_tax24, citm_tax25,
+		citm_incl_tax_ref1, citm_incl_tax_ref2, citm_incl_tax_ref3,
+		citm_incl_tax_ref4, citm_pre_disc, citm_mid_disc,
+		citm_post_disc, citm_original_price_level, citm_price_level,
+		citm_revenue, citm_carry_revenue, citm_unit_cost,
+		citm_print_queue1_itpq_id, citm_print_queue2_itpq_id,
+		citm_print_queue3_itpq_id, citm_print_queue4_itpq_id,
+		citm_print_queue5_itpq_id, citm_print_queue6_itpq_id,
+		citm_print_queue7_itpq_id, citm_print_queue8_itpq_id,
+		citm_print_queue9_itpq_id, citm_print_queue10_itpq_id,
+		citm_no_print, citm_charge_sc1, citm_charge_sc2,
+		citm_charge_sc3, citm_charge_sc4, citm_charge_sc5,
+		citm_charge_tax1, citm_charge_tax2, citm_charge_tax3,
+		citm_charge_tax4, citm_charge_tax5, citm_charge_tax6,
+		citm_charge_tax7, citm_charge_tax8, citm_charge_tax9,
+		citm_charge_tax10, citm_charge_tax11, citm_charge_tax12,
+		citm_charge_tax13, citm_charge_tax14, citm_charge_tax15,
+		citm_charge_tax16, citm_charge_tax17, citm_charge_tax18,
+		citm_charge_tax19, citm_charge_tax20, citm_charge_tax21,
+		citm_charge_tax22, citm_charge_tax23, citm_charge_tax24,
+		citm_charge_tax25, citm_hide, citm_original_olet_id,
+		citm_icat_id, citm_idep_id, citm_icou_id,
+		citm_digp_id, citm_get_revenue, citm_serving_status,
+		citm_pending, citm_ordering_type, citm_round_status,
+		citm_order_time, citm_order_loctime, citm_order_user_id,
+		citm_order_stat_id, citm_rush_time, citm_rush_loctime,
+		citm_rush_user_id, citm_rush_stat_id, citm_rush_count,
+		citm_delivery_time, citm_void_time, citm_void_loctime,
+		citm_void_user_id, citm_void_stat_id, citm_void_vdrs_id,
+		citm_void_consumed, citm_status, citm_slave_id,
+		citm_slave_created, citm_slave_modified,
+		citm_sync_id, created, modified
+	</sql>
+	<insert id="insert" parameterType="com.shiji.entity.PosCheckItems">
+		insert into pos_check_items (
+		<include refid="posCheckItems"/>
+		)
+		values (#{citmId,jdbcType=CHAR}, #{citmBdayId,jdbcType=CHAR}, #{citmBperId,jdbcType=CHAR},
+		#{citmShopId,jdbcType=INTEGER}, #{citmOletId,jdbcType=INTEGER}, #{citmChksId,jdbcType=CHAR},
+		#{citmCptyId,jdbcType=CHAR}, #{citmItemId,jdbcType=INTEGER}, #{citmCode,jdbcType=VARCHAR},
+		#{citmNameL1,jdbcType=VARCHAR}, #{citmNameL2,jdbcType=VARCHAR}, #{citmNameL3,jdbcType=VARCHAR},
+		#{citmNameL4,jdbcType=VARCHAR}, #{citmNameL5,jdbcType=VARCHAR}, #{citmShortNameL1,jdbcType=VARCHAR},
+		#{citmShortNameL2,jdbcType=VARCHAR}, #{citmShortNameL3,jdbcType=VARCHAR}, #{citmShortNameL4,jdbcType=VARCHAR},
+		#{citmShortNameL5,jdbcType=VARCHAR}, #{citmParentCitmId,jdbcType=CHAR}, #{citmRole,jdbcType=CHAR},
+		#{citmChildCount,jdbcType=INTEGER}, #{citmModifierCount,jdbcType=INTEGER}, #{citmSeat,jdbcType=INTEGER},
+		#{citmMixAndMatchCitmId,jdbcType=CHAR}, #{citmSeq,jdbcType=INTEGER}, #{citmRoundTotal,jdbcType=DECIMAL},
+		#{citmTotal,jdbcType=DOUBLE}, #{citmRoundAmount,jdbcType=DOUBLE}, #{citmCarryTotal,jdbcType=DOUBLE},
+		#{citmQty,jdbcType=DOUBLE}, #{citmBaseQty,jdbcType=DOUBLE}, #{citmPrice,jdbcType=DOUBLE},
+		#{citmOriginalPrice,jdbcType=DOUBLE}, #{citmBasicPrice,jdbcType=DOUBLE},
+		#{citmBasicCalculateMethod,jdbcType=CHAR},
+		#{citmSc1,jdbcType=DOUBLE}, #{citmSc2,jdbcType=DOUBLE}, #{citmSc3,jdbcType=DOUBLE},
+		#{citmSc4,jdbcType=DOUBLE}, #{citmSc5,jdbcType=DOUBLE}, #{citmTax1,jdbcType=DOUBLE},
+		#{citmTax2,jdbcType=DOUBLE}, #{citmTax3,jdbcType=DOUBLE}, #{citmTax4,jdbcType=DOUBLE},
+		#{citmTax5,jdbcType=DOUBLE}, #{citmTax6,jdbcType=DOUBLE}, #{citmTax7,jdbcType=DOUBLE},
+		#{citmTax8,jdbcType=DOUBLE}, #{citmTax9,jdbcType=DOUBLE}, #{citmTax10,jdbcType=DOUBLE},
+		#{citmTax11,jdbcType=DOUBLE}, #{citmTax12,jdbcType=DOUBLE}, #{citmTax13,jdbcType=DOUBLE},
+		#{citmTax14,jdbcType=DOUBLE}, #{citmTax15,jdbcType=DOUBLE}, #{citmTax16,jdbcType=DOUBLE},
+		#{citmTax17,jdbcType=DOUBLE}, #{citmTax18,jdbcType=DOUBLE}, #{citmTax19,jdbcType=DOUBLE},
+		#{citmTax20,jdbcType=DOUBLE}, #{citmTax21,jdbcType=DOUBLE}, #{citmTax22,jdbcType=DOUBLE},
+		#{citmTax23,jdbcType=DOUBLE}, #{citmTax24,jdbcType=DOUBLE}, #{citmTax25,jdbcType=DOUBLE},
+		#{citmInclTaxRef1,jdbcType=DOUBLE}, #{citmInclTaxRef2,jdbcType=DOUBLE}, #{citmInclTaxRef3,jdbcType=DOUBLE},
+		#{citmInclTaxRef4,jdbcType=DOUBLE}, #{citmPreDisc,jdbcType=DOUBLE}, #{citmMidDisc,jdbcType=DOUBLE},
+		#{citmPostDisc,jdbcType=DOUBLE}, #{citmOriginalPriceLevel,jdbcType=INTEGER}, #{citmPriceLevel,jdbcType=INTEGER},
+		#{citmRevenue,jdbcType=DOUBLE}, #{citmCarryRevenue,jdbcType=DOUBLE}, #{citmUnitCost,jdbcType=DECIMAL},
+		#{citmPrintQueue1ItpqId,jdbcType=INTEGER}, #{citmPrintQueue2ItpqId,jdbcType=INTEGER},
+		#{citmPrintQueue3ItpqId,jdbcType=INTEGER}, #{citmPrintQueue4ItpqId,jdbcType=INTEGER},
+		#{citmPrintQueue5ItpqId,jdbcType=INTEGER}, #{citmPrintQueue6ItpqId,jdbcType=INTEGER},
+		#{citmPrintQueue7ItpqId,jdbcType=INTEGER}, #{citmPrintQueue8ItpqId,jdbcType=INTEGER},
+		#{citmPrintQueue9ItpqId,jdbcType=INTEGER}, #{citmPrintQueue10ItpqId,jdbcType=INTEGER},
+		#{citmNoPrint,jdbcType=CHAR}, #{citmChargeSc1,jdbcType=CHAR}, #{citmChargeSc2,jdbcType=CHAR},
+		#{citmChargeSc3,jdbcType=CHAR}, #{citmChargeSc4,jdbcType=CHAR}, #{citmChargeSc5,jdbcType=CHAR},
+		#{citmChargeTax1,jdbcType=CHAR}, #{citmChargeTax2,jdbcType=CHAR}, #{citmChargeTax3,jdbcType=CHAR},
+		#{citmChargeTax4,jdbcType=CHAR}, #{citmChargeTax5,jdbcType=CHAR}, #{citmChargeTax6,jdbcType=CHAR},
+		#{citmChargeTax7,jdbcType=CHAR}, #{citmChargeTax8,jdbcType=CHAR}, #{citmChargeTax9,jdbcType=CHAR},
+		#{citmChargeTax10,jdbcType=CHAR}, #{citmChargeTax11,jdbcType=CHAR}, #{citmChargeTax12,jdbcType=CHAR},
+		#{citmChargeTax13,jdbcType=CHAR}, #{citmChargeTax14,jdbcType=CHAR}, #{citmChargeTax15,jdbcType=CHAR},
+		#{citmChargeTax16,jdbcType=CHAR}, #{citmChargeTax17,jdbcType=CHAR}, #{citmChargeTax18,jdbcType=CHAR},
+		#{citmChargeTax19,jdbcType=CHAR}, #{citmChargeTax20,jdbcType=CHAR}, #{citmChargeTax21,jdbcType=CHAR},
+		#{citmChargeTax22,jdbcType=CHAR}, #{citmChargeTax23,jdbcType=CHAR}, #{citmChargeTax24,jdbcType=CHAR},
+		#{citmChargeTax25,jdbcType=CHAR}, #{citmHide,jdbcType=CHAR}, #{citmOriginalOletId,jdbcType=INTEGER},
+		#{citmIcatId,jdbcType=INTEGER}, #{citmIdepId,jdbcType=INTEGER}, #{citmIcouId,jdbcType=INTEGER},
+		#{citmDigpId,jdbcType=INTEGER}, #{citmGetRevenue,jdbcType=CHAR}, #{citmServingStatus,jdbcType=CHAR},
+		#{citmPending,jdbcType=CHAR}, #{citmOrderingType,jdbcType=CHAR}, #{citmRoundStatus,jdbcType=CHAR},
+		#{citmOrderTime,jdbcType=TIMESTAMP}, #{citmOrderLoctime,jdbcType=TIMESTAMP},
+		#{citmOrderUserId,jdbcType=INTEGER},
+		#{citmOrderStatId,jdbcType=INTEGER}, #{citmRushTime,jdbcType=TIMESTAMP}, #{citmRushLoctime,jdbcType=TIMESTAMP},
+		#{citmRushUserId,jdbcType=INTEGER}, #{citmRushStatId,jdbcType=INTEGER}, #{citmRushCount,jdbcType=INTEGER},
+		#{citmDeliveryTime,jdbcType=TIMESTAMP}, #{citmVoidTime,jdbcType=TIMESTAMP},
+		#{citmVoidLoctime,jdbcType=TIMESTAMP},
+		#{citmVoidUserId,jdbcType=INTEGER}, #{citmVoidStatId,jdbcType=INTEGER}, #{citmVoidVdrsId,jdbcType=INTEGER},
+		#{citmVoidConsumed,jdbcType=CHAR}, #{citmStatus,jdbcType=CHAR}, #{citmSlaveId,jdbcType=INTEGER},
+		#{citmSlaveCreated,jdbcType=TIMESTAMP}, #{citmSlaveModified,jdbcType=TIMESTAMP},
+		#{citmSyncId,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, #{modified,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="com.shiji.entity.PosCheckItems">
+		update pos_check_items
+		set citm_bday_id = #{citmBdayId,jdbcType=CHAR},
+		citm_bper_id = #{citmBperId,jdbcType=CHAR},
+		citm_shop_id = #{citmShopId,jdbcType=INTEGER},
+		citm_olet_id = #{citmOletId,jdbcType=INTEGER},
+		citm_chks_id = #{citmChksId,jdbcType=CHAR},
+		citm_cpty_id = #{citmCptyId,jdbcType=CHAR},
+		citm_item_id = #{citmItemId,jdbcType=INTEGER},
+		citm_code = #{citmCode,jdbcType=VARCHAR},
+		citm_name_l1 = #{citmNameL1,jdbcType=VARCHAR},
+		citm_name_l2 = #{citmNameL2,jdbcType=VARCHAR},
+		citm_name_l3 = #{citmNameL3,jdbcType=VARCHAR},
+		citm_name_l4 = #{citmNameL4,jdbcType=VARCHAR},
+		citm_name_l5 = #{citmNameL5,jdbcType=VARCHAR},
+		citm_short_name_l1 = #{citmShortNameL1,jdbcType=VARCHAR},
+		citm_short_name_l2 = #{citmShortNameL2,jdbcType=VARCHAR},
+		citm_short_name_l3 = #{citmShortNameL3,jdbcType=VARCHAR},
+		citm_short_name_l4 = #{citmShortNameL4,jdbcType=VARCHAR},
+		citm_short_name_l5 = #{citmShortNameL5,jdbcType=VARCHAR},
+		citm_parent_citm_id = #{citmParentCitmId,jdbcType=CHAR},
+		citm_role = #{citmRole,jdbcType=CHAR},
+		citm_child_count = #{citmChildCount,jdbcType=INTEGER},
+		citm_modifier_count = #{citmModifierCount,jdbcType=INTEGER},
+		citm_seat = #{citmSeat,jdbcType=INTEGER},
+		citm_mix_and_match_citm_id = #{citmMixAndMatchCitmId,jdbcType=CHAR},
+		citm_seq = #{citmSeq,jdbcType=INTEGER},
+		citm_round_total = #{citmRoundTotal,jdbcType=DECIMAL},
+		citm_total = #{citmTotal,jdbcType=DOUBLE},
+		citm_round_amount = #{citmRoundAmount,jdbcType=DOUBLE},
+		citm_carry_total = #{citmCarryTotal,jdbcType=DOUBLE},
+		citm_qty = #{citmQty,jdbcType=DOUBLE},
+		citm_base_qty = #{citmBaseQty,jdbcType=DOUBLE},
+		citm_price = #{citmPrice,jdbcType=DOUBLE},
+		citm_original_price = #{citmOriginalPrice,jdbcType=DOUBLE},
+		citm_basic_price = #{citmBasicPrice,jdbcType=DOUBLE},
+		citm_basic_calculate_method = #{citmBasicCalculateMethod,jdbcType=CHAR},
+		citm_sc1 = #{citmSc1,jdbcType=DOUBLE},
+		citm_sc2 = #{citmSc2,jdbcType=DOUBLE},
+		citm_sc3 = #{citmSc3,jdbcType=DOUBLE},
+		citm_sc4 = #{citmSc4,jdbcType=DOUBLE},
+		citm_sc5 = #{citmSc5,jdbcType=DOUBLE},
+		citm_tax1 = #{citmTax1,jdbcType=DOUBLE},
+		citm_tax2 = #{citmTax2,jdbcType=DOUBLE},
+		citm_tax3 = #{citmTax3,jdbcType=DOUBLE},
+		citm_tax4 = #{citmTax4,jdbcType=DOUBLE},
+		citm_tax5 = #{citmTax5,jdbcType=DOUBLE},
+		citm_tax6 = #{citmTax6,jdbcType=DOUBLE},
+		citm_tax7 = #{citmTax7,jdbcType=DOUBLE},
+		citm_tax8 = #{citmTax8,jdbcType=DOUBLE},
+		citm_tax9 = #{citmTax9,jdbcType=DOUBLE},
+		citm_tax10 = #{citmTax10,jdbcType=DOUBLE},
+		citm_tax11 = #{citmTax11,jdbcType=DOUBLE},
+		citm_tax12 = #{citmTax12,jdbcType=DOUBLE},
+		citm_tax13 = #{citmTax13,jdbcType=DOUBLE},
+		citm_tax14 = #{citmTax14,jdbcType=DOUBLE},
+		citm_tax15 = #{citmTax15,jdbcType=DOUBLE},
+		citm_tax16 = #{citmTax16,jdbcType=DOUBLE},
+		citm_tax17 = #{citmTax17,jdbcType=DOUBLE},
+		citm_tax18 = #{citmTax18,jdbcType=DOUBLE},
+		citm_tax19 = #{citmTax19,jdbcType=DOUBLE},
+		citm_tax20 = #{citmTax20,jdbcType=DOUBLE},
+		citm_tax21 = #{citmTax21,jdbcType=DOUBLE},
+		citm_tax22 = #{citmTax22,jdbcType=DOUBLE},
+		citm_tax23 = #{citmTax23,jdbcType=DOUBLE},
+		citm_tax24 = #{citmTax24,jdbcType=DOUBLE},
+		citm_tax25 = #{citmTax25,jdbcType=DOUBLE},
+		citm_incl_tax_ref1 = #{citmInclTaxRef1,jdbcType=DOUBLE},
+		citm_incl_tax_ref2 = #{citmInclTaxRef2,jdbcType=DOUBLE},
+		citm_incl_tax_ref3 = #{citmInclTaxRef3,jdbcType=DOUBLE},
+		citm_incl_tax_ref4 = #{citmInclTaxRef4,jdbcType=DOUBLE},
+		citm_pre_disc = #{citmPreDisc,jdbcType=DOUBLE},
+		citm_mid_disc = #{citmMidDisc,jdbcType=DOUBLE},
+		citm_post_disc = #{citmPostDisc,jdbcType=DOUBLE},
+		citm_original_price_level = #{citmOriginalPriceLevel,jdbcType=INTEGER},
+		citm_price_level = #{citmPriceLevel,jdbcType=INTEGER},
+		citm_revenue = #{citmRevenue,jdbcType=DOUBLE},
+		citm_carry_revenue = #{citmCarryRevenue,jdbcType=DOUBLE},
+		citm_unit_cost = #{citmUnitCost,jdbcType=DECIMAL},
+		citm_print_queue1_itpq_id = #{citmPrintQueue1ItpqId,jdbcType=INTEGER},
+		citm_print_queue2_itpq_id = #{citmPrintQueue2ItpqId,jdbcType=INTEGER},
+		citm_print_queue3_itpq_id = #{citmPrintQueue3ItpqId,jdbcType=INTEGER},
+		citm_print_queue4_itpq_id = #{citmPrintQueue4ItpqId,jdbcType=INTEGER},
+		citm_print_queue5_itpq_id = #{citmPrintQueue5ItpqId,jdbcType=INTEGER},
+		citm_print_queue6_itpq_id = #{citmPrintQueue6ItpqId,jdbcType=INTEGER},
+		citm_print_queue7_itpq_id = #{citmPrintQueue7ItpqId,jdbcType=INTEGER},
+		citm_print_queue8_itpq_id = #{citmPrintQueue8ItpqId,jdbcType=INTEGER},
+		citm_print_queue9_itpq_id = #{citmPrintQueue9ItpqId,jdbcType=INTEGER},
+		citm_print_queue10_itpq_id = #{citmPrintQueue10ItpqId,jdbcType=INTEGER},
+		citm_no_print = #{citmNoPrint,jdbcType=CHAR},
+		citm_charge_sc1 = #{citmChargeSc1,jdbcType=CHAR},
+		citm_charge_sc2 = #{citmChargeSc2,jdbcType=CHAR},
+		citm_charge_sc3 = #{citmChargeSc3,jdbcType=CHAR},
+		citm_charge_sc4 = #{citmChargeSc4,jdbcType=CHAR},
+		citm_charge_sc5 = #{citmChargeSc5,jdbcType=CHAR},
+		citm_charge_tax1 = #{citmChargeTax1,jdbcType=CHAR},
+		citm_charge_tax2 = #{citmChargeTax2,jdbcType=CHAR},
+		citm_charge_tax3 = #{citmChargeTax3,jdbcType=CHAR},
+		citm_charge_tax4 = #{citmChargeTax4,jdbcType=CHAR},
+		citm_charge_tax5 = #{citmChargeTax5,jdbcType=CHAR},
+		citm_charge_tax6 = #{citmChargeTax6,jdbcType=CHAR},
+		citm_charge_tax7 = #{citmChargeTax7,jdbcType=CHAR},
+		citm_charge_tax8 = #{citmChargeTax8,jdbcType=CHAR},
+		citm_charge_tax9 = #{citmChargeTax9,jdbcType=CHAR},
+		citm_charge_tax10 = #{citmChargeTax10,jdbcType=CHAR},
+		citm_charge_tax11 = #{citmChargeTax11,jdbcType=CHAR},
+		citm_charge_tax12 = #{citmChargeTax12,jdbcType=CHAR},
+		citm_charge_tax13 = #{citmChargeTax13,jdbcType=CHAR},
+		citm_charge_tax14 = #{citmChargeTax14,jdbcType=CHAR},
+		citm_charge_tax15 = #{citmChargeTax15,jdbcType=CHAR},
+		citm_charge_tax16 = #{citmChargeTax16,jdbcType=CHAR},
+		citm_charge_tax17 = #{citmChargeTax17,jdbcType=CHAR},
+		citm_charge_tax18 = #{citmChargeTax18,jdbcType=CHAR},
+		citm_charge_tax19 = #{citmChargeTax19,jdbcType=CHAR},
+		citm_charge_tax20 = #{citmChargeTax20,jdbcType=CHAR},
+		citm_charge_tax21 = #{citmChargeTax21,jdbcType=CHAR},
+		citm_charge_tax22 = #{citmChargeTax22,jdbcType=CHAR},
+		citm_charge_tax23 = #{citmChargeTax23,jdbcType=CHAR},
+		citm_charge_tax24 = #{citmChargeTax24,jdbcType=CHAR},
+		citm_charge_tax25 = #{citmChargeTax25,jdbcType=CHAR},
+		citm_hide = #{citmHide,jdbcType=CHAR},
+		citm_original_olet_id = #{citmOriginalOletId,jdbcType=INTEGER},
+		citm_icat_id = #{citmIcatId,jdbcType=INTEGER},
+		citm_idep_id = #{citmIdepId,jdbcType=INTEGER},
+		citm_icou_id = #{citmIcouId,jdbcType=INTEGER},
+		citm_digp_id = #{citmDigpId,jdbcType=INTEGER},
+		citm_get_revenue = #{citmGetRevenue,jdbcType=CHAR},
+		citm_serving_status = #{citmServingStatus,jdbcType=CHAR},
+		citm_pending = #{citmPending,jdbcType=CHAR},
+		citm_ordering_type = #{citmOrderingType,jdbcType=CHAR},
+		citm_round_status = #{citmRoundStatus,jdbcType=CHAR},
+		citm_order_time = #{citmOrderTime,jdbcType=TIMESTAMP},
+		citm_order_loctime = #{citmOrderLoctime,jdbcType=TIMESTAMP},
+		citm_order_user_id = #{citmOrderUserId,jdbcType=INTEGER},
+		citm_order_stat_id = #{citmOrderStatId,jdbcType=INTEGER},
+		citm_rush_time = #{citmRushTime,jdbcType=TIMESTAMP},
+		citm_rush_loctime = #{citmRushLoctime,jdbcType=TIMESTAMP},
+		citm_rush_user_id = #{citmRushUserId,jdbcType=INTEGER},
+		citm_rush_stat_id = #{citmRushStatId,jdbcType=INTEGER},
+		citm_rush_count = #{citmRushCount,jdbcType=INTEGER},
+		citm_delivery_time = #{citmDeliveryTime,jdbcType=TIMESTAMP},
+		citm_void_time = #{citmVoidTime,jdbcType=TIMESTAMP},
+		citm_void_loctime = #{citmVoidLoctime,jdbcType=TIMESTAMP},
+		citm_void_user_id = #{citmVoidUserId,jdbcType=INTEGER},
+		citm_void_stat_id = #{citmVoidStatId,jdbcType=INTEGER},
+		citm_void_vdrs_id = #{citmVoidVdrsId,jdbcType=INTEGER},
+		citm_void_consumed = #{citmVoidConsumed,jdbcType=CHAR},
+		citm_status = #{citmStatus,jdbcType=CHAR},
+		citm_slave_id = #{citmSlaveId,jdbcType=INTEGER},
+		citm_slave_created = #{citmSlaveCreated,jdbcType=TIMESTAMP},
+		citm_slave_modified = #{citmSlaveModified,jdbcType=TIMESTAMP},
+		citm_sync_id = #{citmSyncId,jdbcType=INTEGER},
+		created = #{created,jdbcType=TIMESTAMP},
+		modified = #{modified,jdbcType=TIMESTAMP}
+		where citm_id = #{citmId,jdbcType=CHAR}
+	</update>
+	<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select
+		<include refid="posCheckItems"/>
+		from pos_check_items
+		where citm_id = #{citmId,jdbcType=CHAR}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select
+		<include refid="posCheckItems"/>
+		from pos_check_items
+	</select>
+	<select id="findPoscheckItemsByChksid" resultType="java.util.Map">
+		select
+		<include refid="posCheckItems"/>
+		from pos_check_items where 1=1
+		<if test="list!=null">
+			and citm_chks_id in
+			<choose>
+				<when test="list.size()==0">
+					(null)
+				</when>
+				<when test="list.size()>0">
+					<foreach collection="list" index="index" item="chksId" open="("
+							 separator="," close=")">
+						#{chksId}
+					</foreach>
+				</when>
+			</choose>
+		</if>
+	</select>
+	<select id="findPoscheckItemsByChksidAndItemtotal" resultType="java.util.Map">
+		select
+		citm_chks_id as chksId,sum(citm_round_total) as itemTotal,sum(citm_pre_disc+citm_post_disc+citm_mid_disc) as checkItemDiscountTotal
+		from pos_check_items where 1=1
+		<if test="list!=null">
+			and citm_chks_id in
+			<choose>
+				<when test="list.size()==0">
+					(null)
+				</when>
+				<when test="list.size()>0">
+					<foreach collection="list" index="index" item="chksId" open="("
+							 separator="," close=")">
+						#{chksId}
+					</foreach>
+				</when>
+			</choose>
+		</if>
+		group by citm_chks_id
+	</select>
+
+	<select id="findAllByBusinessDayIdAndTimeRang" resultType="com.shiji.entity.PosCheckVo">
+		SELECT
+		poc.chks_id AS chksId,
+		oo.olet_name_l1 AS outlet,
+		pbd.bday_date AS date,
+		chks_check_prefix_num AS checkNo,
+		pct.ctbl_table AS tableNo,
+		pct.ctbl_table_ext as tableExt,
+		poc.chks_item_total AS checkItemTotal,
+		poc.chks_check_total AS checkTotal,
+		pop.cpay_name_l1 AS paymentType,
+		pop.cpay_pay_total AS amount,
+		pop.cpay_pay_tips AS tips,
+		poc.chks_pre_disc + poc.chks_post_disc + poc.chks_mid_disc AS checkDiscountTotal
+		FROM
+		pos_check_items pci
+		LEFT JOIN pos_checks poc ON poc.chks_id = pci.citm_chks_id
+		LEFT JOIN pos_check_payments pop ON poc.chks_id = pop.cpay_chks_id
+		LEFT JOIN pos_business_days pbd ON poc.chks_bday_id = pbd.bday_id
+		LEFT JOIN pos_check_tables pct ON poc.chks_id = pct.ctbl_chks_id
+		LEFT JOIN hero_outlet.out_outlets oo ON poc.chks_olet_id = oo.olet_id
+		LEFT JOIN pos_check_discounts pcd ON pcd.cdis_citm_id = pci.citm_id
+		LEFT JOIN pos_check_discounts_items pcdi ON pcd.cdis_id = pcdi.cdit_cdis_id
+		WHERE
+		(
+		SELECT
+		sum( pci1.citm_pre_disc + pci1.citm_post_disc + pci1.citm_mid_disc )
+		FROM
+		pos_check_items pci1
+		WHERE
+		pcd.cdis_citm_id = pci1.citm_id
+		) != ( SELECT sum( pcdi1.cdit_round_total ) FROM pos_check_discounts_items pcdi1 WHERE pcd.cdis_id =
+		pcdi1.cdit_cdis_id )
+		<if test="typeTime==2">
+			<if test="checkBeginTime!=null">
+				and poc.chks_close_time &lt;= #{checkEndTime} and poc.chks_close_time &gt;=#{checkBeginTime}
+			</if>
+		</if>
+		<if test="typeTime ==1">
+			<if test="checkBeginTime!=null">
+				and poc.chks_open_time &lt;= #{checkEndTime} and poc.chks_open_time &gt;=#{checkBeginTime}
+			</if>
+		</if>
+		<if test="businessDayBeginDate!=null">
+			and pbd.bday_date &lt;= #{businessDayEndDate} and pbd.bday_date &gt;=#{businessDayBeginDate}
+		</if>
+		group by pop.cpay_id
+	</select>
+
+</mapper>

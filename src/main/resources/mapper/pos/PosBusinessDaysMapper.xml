@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shiji.mapper.pos.PosBusinessDaysMapper">
+	<resultMap id="BaseResultMap" type="com.shiji.entity.PosBusinessDays">
+		<id column="bday_id" jdbcType="CHAR" property="bdayId"/>
+		<result column="bday_shop_id" jdbcType="INTEGER" property="bdayShopId"/>
+		<result column="bday_olet_id" jdbcType="INTEGER" property="bdayOletId"/>
+		<result column="bday_date" jdbcType="DATE" property="bdayDate"/>
+		<result column="bday_week" jdbcType="INTEGER" property="bdayWeek"/>
+		<result column="bday_day_of_week" jdbcType="INTEGER" property="bdayDayOfWeek"/>
+		<result column="bday_holiday_cald_id" jdbcType="INTEGER" property="bdayHolidayCaldId"/>
+		<result column="bday_day_before_holiday_cald_id" jdbcType="INTEGER" property="bdayDayBeforeHolidayCaldId"/>
+		<result column="bday_special_day_cald_id" jdbcType="INTEGER" property="bdaySpecialDayCaldId"/>
+		<result column="bday_day_before_special_day_cald_id" jdbcType="INTEGER"
+				property="bdayDayBeforeSpecialDayCaldId"/>
+		<result column="bday_start_time" jdbcType="TIMESTAMP" property="bdayStartTime"/>
+		<result column="bday_start_loctime" jdbcType="TIMESTAMP" property="bdayStartLoctime"/>
+		<result column="bday_end_time" jdbcType="TIMESTAMP" property="bdayEndTime"/>
+		<result column="bday_end_loctime" jdbcType="TIMESTAMP" property="bdayEndLoctime"/>
+		<result column="bday_last_recall_time" jdbcType="TIMESTAMP" property="bdayLastRecallTime"/>
+		<result column="bday_last_recall_loctime" jdbcType="TIMESTAMP" property="bdayLastRecallLoctime"/>
+		<result column="bday_start_user_id" jdbcType="INTEGER" property="bdayStartUserId"/>
+		<result column="bday_end_user_id" jdbcType="INTEGER" property="bdayEndUserId"/>
+		<result column="bday_recall_user_id" jdbcType="INTEGER" property="bdayRecallUserId"/>
+		<result column="bday_recall_count" jdbcType="INTEGER" property="bdayRecallCount"/>
+		<result column="bday_price_level" jdbcType="INTEGER" property="bdayPriceLevel"/>
+		<result column="bday_sc1_rate" jdbcType="REAL" property="bdaySc1Rate"/>
+		<result column="bday_sc2_rate" jdbcType="REAL" property="bdaySc2Rate"/>
+		<result column="bday_sc3_rate" jdbcType="REAL" property="bdaySc3Rate"/>
+		<result column="bday_sc4_rate" jdbcType="REAL" property="bdaySc4Rate"/>
+		<result column="bday_sc5_rate" jdbcType="REAL" property="bdaySc5Rate"/>
+		<result column="bday_tax1_rate" jdbcType="REAL" property="bdayTax1Rate"/>
+		<result column="bday_tax2_rate" jdbcType="REAL" property="bdayTax2Rate"/>
+		<result column="bday_tax3_rate" jdbcType="REAL" property="bdayTax3Rate"/>
+		<result column="bday_tax4_rate" jdbcType="REAL" property="bdayTax4Rate"/>
+		<result column="bday_tax5_rate" jdbcType="REAL" property="bdayTax5Rate"/>
+		<result column="bday_tax6_rate" jdbcType="REAL" property="bdayTax6Rate"/>
+		<result column="bday_tax7_rate" jdbcType="REAL" property="bdayTax7Rate"/>
+		<result column="bday_tax8_rate" jdbcType="REAL" property="bdayTax8Rate"/>
+		<result column="bday_tax9_rate" jdbcType="REAL" property="bdayTax9Rate"/>
+		<result column="bday_tax10_rate" jdbcType="REAL" property="bdayTax10Rate"/>
+		<result column="bday_tax11_rate" jdbcType="REAL" property="bdayTax11Rate"/>
+		<result column="bday_tax12_rate" jdbcType="REAL" property="bdayTax12Rate"/>
+		<result column="bday_tax13_rate" jdbcType="REAL" property="bdayTax13Rate"/>
+		<result column="bday_tax14_rate" jdbcType="REAL" property="bdayTax14Rate"/>
+		<result column="bday_tax15_rate" jdbcType="REAL" property="bdayTax15Rate"/>
+		<result column="bday_tax16_rate" jdbcType="REAL" property="bdayTax16Rate"/>
+		<result column="bday_tax17_rate" jdbcType="REAL" property="bdayTax17Rate"/>
+		<result column="bday_tax18_rate" jdbcType="REAL" property="bdayTax18Rate"/>
+		<result column="bday_tax19_rate" jdbcType="REAL" property="bdayTax19Rate"/>
+		<result column="bday_tax20_rate" jdbcType="REAL" property="bdayTax20Rate"/>
+		<result column="bday_tax21_rate" jdbcType="REAL" property="bdayTax21Rate"/>
+		<result column="bday_tax22_rate" jdbcType="REAL" property="bdayTax22Rate"/>
+		<result column="bday_tax23_rate" jdbcType="REAL" property="bdayTax23Rate"/>
+		<result column="bday_tax24_rate" jdbcType="REAL" property="bdayTax24Rate"/>
+		<result column="bday_tax25_rate" jdbcType="REAL" property="bdayTax25Rate"/>
+		<result column="bday_item_round" jdbcType="CHAR" property="bdayItemRound"/>
+		<result column="bday_sc_round" jdbcType="CHAR" property="bdayScRound"/>
+		<result column="bday_tax_round" jdbcType="CHAR" property="bdayTaxRound"/>
+		<result column="bday_disc_round" jdbcType="CHAR" property="bdayDiscRound"/>
+		<result column="bday_check_round" jdbcType="CHAR" property="bdayCheckRound"/>
+		<result column="bday_pay_round" jdbcType="CHAR" property="bdayPayRound"/>
+		<result column="bday_gratuity_round" jdbcType="CHAR" property="bdayGratuityRound"/>
+		<result column="bday_item_decimal" jdbcType="INTEGER" property="bdayItemDecimal"/>
+		<result column="bday_sc_decimal" jdbcType="INTEGER" property="bdayScDecimal"/>
+		<result column="bday_tax_decimal" jdbcType="INTEGER" property="bdayTaxDecimal"/>
+		<result column="bday_disc_decimal" jdbcType="INTEGER" property="bdayDiscDecimal"/>
+		<result column="bday_check_decimal" jdbcType="INTEGER" property="bdayCheckDecimal"/>
+		<result column="bday_pay_decimal" jdbcType="INTEGER" property="bdayPayDecimal"/>
+		<result column="bday_gratuity_decimal" jdbcType="INTEGER" property="bdayGratuityDecimal"/>
+		<result column="bday_tax_sc_include_tax_sc_mask1" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask1"/>
+		<result column="bday_tax_sc_include_tax_sc_mask2" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask2"/>
+		<result column="bday_tax_sc_include_tax_sc_mask3" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask3"/>
+		<result column="bday_tax_sc_include_tax_sc_mask4" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask4"/>
+		<result column="bday_tax_sc_include_tax_sc_mask5" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask5"/>
+		<result column="bday_tax_sc_include_tax_sc_mask6" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask6"/>
+		<result column="bday_tax_sc_include_tax_sc_mask7" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask7"/>
+		<result column="bday_tax_sc_include_tax_sc_mask8" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask8"/>
+		<result column="bday_tax_sc_include_tax_sc_mask9" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask9"/>
+		<result column="bday_tax_sc_include_tax_sc_mask10" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask10"/>
+		<result column="bday_tax_sc_include_tax_sc_mask11" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask11"/>
+		<result column="bday_tax_sc_include_tax_sc_mask12" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask12"/>
+		<result column="bday_tax_sc_include_tax_sc_mask13" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask13"/>
+		<result column="bday_tax_sc_include_tax_sc_mask14" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask14"/>
+		<result column="bday_tax_sc_include_tax_sc_mask15" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask15"/>
+		<result column="bday_tax_sc_include_tax_sc_mask16" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask16"/>
+		<result column="bday_tax_sc_include_tax_sc_mask17" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask17"/>
+		<result column="bday_tax_sc_include_tax_sc_mask18" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask18"/>
+		<result column="bday_tax_sc_include_tax_sc_mask19" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask19"/>
+		<result column="bday_tax_sc_include_tax_sc_mask20" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask20"/>
+		<result column="bday_tax_sc_include_tax_sc_mask21" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask21"/>
+		<result column="bday_tax_sc_include_tax_sc_mask22" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask22"/>
+		<result column="bday_tax_sc_include_tax_sc_mask23" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask23"/>
+		<result column="bday_tax_sc_include_tax_sc_mask24" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask24"/>
+		<result column="bday_tax_sc_include_tax_sc_mask25" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask25"/>
+		<result column="bday_tax_sc_include_tax_sc_mask26" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask26"/>
+		<result column="bday_tax_sc_include_tax_sc_mask27" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask27"/>
+		<result column="bday_tax_sc_include_tax_sc_mask28" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask28"/>
+		<result column="bday_tax_sc_include_tax_sc_mask29" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask29"/>
+		<result column="bday_tax_sc_include_tax_sc_mask30" jdbcType="VARCHAR" property="bdayTaxScIncludeTaxScMask30"/>
+		<result column="bday_tax_sc_include_pre_disc" jdbcType="VARCHAR" property="bdayTaxScIncludePreDisc"/>
+		<result column="bday_tax_include_mid_disc" jdbcType="VARCHAR" property="bdayTaxIncludeMidDisc"/>
+		<result column="bday_generate_check_num_by" jdbcType="CHAR" property="bdayGenerateCheckNumBy"/>
+		<result column="bday_check_prefix" jdbcType="VARCHAR" property="bdayCheckPrefix"/>
+		<result column="bday_start_check_num" jdbcType="INTEGER" property="bdayStartCheckNum"/>
+		<result column="bday_end_check_num" jdbcType="INTEGER" property="bdayEndCheckNum"/>
+		<result column="bday_next_check_num" jdbcType="INTEGER" property="bdayNextCheckNum"/>
+		<result column="bday_reset_check_num" jdbcType="CHAR" property="bdayResetCheckNum"/>
+		<result column="bday_reset_check_num_month" jdbcType="INTEGER" property="bdayResetCheckNumMonth"/>
+		<result column="bday_reset_check_num_day" jdbcType="INTEGER" property="bdayResetCheckNumDay"/>
+		<result column="bday_sphr_id" jdbcType="INTEGER" property="bdaySphrId"/>
+		<result column="bday_base_currency_code" jdbcType="VARCHAR" property="bdayBaseCurrencyCode"/>
+		<result column="bday_base_currency_rate" jdbcType="DECIMAL" property="bdayBaseCurrencyRate"/>
+		<result column="bday_custom_data1" jdbcType="VARCHAR" property="bdayCustomData1"/>
+		<result column="bday_status" jdbcType="CHAR" property="bdayStatus"/>
+		<result column="bday_slave_id" jdbcType="INTEGER" property="bdaySlaveId"/>
+		<result column="bday_slave_created" jdbcType="TIMESTAMP" property="bdaySlaveCreated"/>
+		<result column="bday_slave_modified" jdbcType="TIMESTAMP" property="bdaySlaveModified"/>
+		<result column="bday_sync_id" jdbcType="INTEGER" property="bdaySyncId"/>
+		<result column="created" jdbcType="TIMESTAMP" property="created"/>
+		<result column="modified" jdbcType="TIMESTAMP" property="modified"/>
+	</resultMap>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from pos_business_days
+		where bday_id = #{bdayId,jdbcType=CHAR}
+	</delete>
+	<sql id="posBusinessDays">
+		bday_id, bday_shop_id, bday_olet_id,
+		bday_date, bday_week, bday_day_of_week,
+		bday_holiday_cald_id, bday_day_before_holiday_cald_id,
+		bday_special_day_cald_id, bday_day_before_special_day_cald_id,
+		bday_start_time, bday_start_loctime, bday_end_time,
+		bday_end_loctime, bday_last_recall_time,
+		bday_last_recall_loctime, bday_start_user_id,
+		bday_end_user_id, bday_recall_user_id, bday_recall_count,
+		bday_price_level, bday_sc1_rate, bday_sc2_rate,
+		bday_sc3_rate, bday_sc4_rate, bday_sc5_rate,
+		bday_tax1_rate, bday_tax2_rate, bday_tax3_rate,
+		bday_tax4_rate, bday_tax5_rate, bday_tax6_rate,
+		bday_tax7_rate, bday_tax8_rate, bday_tax9_rate,
+		bday_tax10_rate, bday_tax11_rate, bday_tax12_rate,
+		bday_tax13_rate, bday_tax14_rate, bday_tax15_rate,
+		bday_tax16_rate, bday_tax17_rate, bday_tax18_rate,
+		bday_tax19_rate, bday_tax20_rate, bday_tax21_rate,
+		bday_tax22_rate, bday_tax23_rate, bday_tax24_rate,
+		bday_tax25_rate, bday_item_round, bday_sc_round,
+		bday_tax_round, bday_disc_round, bday_check_round,
+		bday_pay_round, bday_gratuity_round, bday_item_decimal,
+		bday_sc_decimal, bday_tax_decimal, bday_disc_decimal,
+		bday_check_decimal, bday_pay_decimal, bday_gratuity_decimal,
+		bday_tax_sc_include_tax_sc_mask1, bday_tax_sc_include_tax_sc_mask2,
+		bday_tax_sc_include_tax_sc_mask3, bday_tax_sc_include_tax_sc_mask4,
+		bday_tax_sc_include_tax_sc_mask5, bday_tax_sc_include_tax_sc_mask6,
+		bday_tax_sc_include_tax_sc_mask7, bday_tax_sc_include_tax_sc_mask8,
+		bday_tax_sc_include_tax_sc_mask9, bday_tax_sc_include_tax_sc_mask10,
+		bday_tax_sc_include_tax_sc_mask11, bday_tax_sc_include_tax_sc_mask12,
+		bday_tax_sc_include_tax_sc_mask13, bday_tax_sc_include_tax_sc_mask14,
+		bday_tax_sc_include_tax_sc_mask15, bday_tax_sc_include_tax_sc_mask16,
+		bday_tax_sc_include_tax_sc_mask17, bday_tax_sc_include_tax_sc_mask18,
+		bday_tax_sc_include_tax_sc_mask19, bday_tax_sc_include_tax_sc_mask20,
+		bday_tax_sc_include_tax_sc_mask21, bday_tax_sc_include_tax_sc_mask22,
+		bday_tax_sc_include_tax_sc_mask23, bday_tax_sc_include_tax_sc_mask24,
+		bday_tax_sc_include_tax_sc_mask25, bday_tax_sc_include_tax_sc_mask26,
+		bday_tax_sc_include_tax_sc_mask27, bday_tax_sc_include_tax_sc_mask28,
+		bday_tax_sc_include_tax_sc_mask29, bday_tax_sc_include_tax_sc_mask30,
+		bday_tax_sc_include_pre_disc, bday_tax_include_mid_disc,
+		bday_generate_check_num_by, bday_check_prefix, bday_start_check_num,
+		bday_end_check_num, bday_next_check_num, bday_reset_check_num,
+		bday_reset_check_num_month, bday_reset_check_num_day,
+		bday_sphr_id, bday_base_currency_code, bday_base_currency_rate,
+		bday_custom_data1, bday_status, bday_slave_id,
+		bday_slave_created, bday_slave_modified,
+		bday_sync_id, created, modified
+	</sql>
+	<insert id="insert" parameterType="com.shiji.entity.PosBusinessDays">
+		insert into pos_business_days (
+		<include refid="posBusinessDays"/>
+		)
+		values (#{bdayId,jdbcType=CHAR}, #{bdayShopId,jdbcType=INTEGER}, #{bdayOletId,jdbcType=INTEGER},
+		#{bdayDate,jdbcType=DATE}, #{bdayWeek,jdbcType=INTEGER}, #{bdayDayOfWeek,jdbcType=INTEGER},
+		#{bdayHolidayCaldId,jdbcType=INTEGER}, #{bdayDayBeforeHolidayCaldId,jdbcType=INTEGER},
+		#{bdaySpecialDayCaldId,jdbcType=INTEGER}, #{bdayDayBeforeSpecialDayCaldId,jdbcType=INTEGER},
+		#{bdayStartTime,jdbcType=TIMESTAMP}, #{bdayStartLoctime,jdbcType=TIMESTAMP}, #{bdayEndTime,jdbcType=TIMESTAMP},
+		#{bdayEndLoctime,jdbcType=TIMESTAMP}, #{bdayLastRecallTime,jdbcType=TIMESTAMP},
+		#{bdayLastRecallLoctime,jdbcType=TIMESTAMP}, #{bdayStartUserId,jdbcType=INTEGER},
+		#{bdayEndUserId,jdbcType=INTEGER}, #{bdayRecallUserId,jdbcType=INTEGER}, #{bdayRecallCount,jdbcType=INTEGER},
+		#{bdayPriceLevel,jdbcType=INTEGER}, #{bdaySc1Rate,jdbcType=REAL}, #{bdaySc2Rate,jdbcType=REAL},
+		#{bdaySc3Rate,jdbcType=REAL}, #{bdaySc4Rate,jdbcType=REAL}, #{bdaySc5Rate,jdbcType=REAL},
+		#{bdayTax1Rate,jdbcType=REAL}, #{bdayTax2Rate,jdbcType=REAL}, #{bdayTax3Rate,jdbcType=REAL},
+		#{bdayTax4Rate,jdbcType=REAL}, #{bdayTax5Rate,jdbcType=REAL}, #{bdayTax6Rate,jdbcType=REAL},
+		#{bdayTax7Rate,jdbcType=REAL}, #{bdayTax8Rate,jdbcType=REAL}, #{bdayTax9Rate,jdbcType=REAL},
+		#{bdayTax10Rate,jdbcType=REAL}, #{bdayTax11Rate,jdbcType=REAL}, #{bdayTax12Rate,jdbcType=REAL},
+		#{bdayTax13Rate,jdbcType=REAL}, #{bdayTax14Rate,jdbcType=REAL}, #{bdayTax15Rate,jdbcType=REAL},
+		#{bdayTax16Rate,jdbcType=REAL}, #{bdayTax17Rate,jdbcType=REAL}, #{bdayTax18Rate,jdbcType=REAL},
+		#{bdayTax19Rate,jdbcType=REAL}, #{bdayTax20Rate,jdbcType=REAL}, #{bdayTax21Rate,jdbcType=REAL},
+		#{bdayTax22Rate,jdbcType=REAL}, #{bdayTax23Rate,jdbcType=REAL}, #{bdayTax24Rate,jdbcType=REAL},
+		#{bdayTax25Rate,jdbcType=REAL}, #{bdayItemRound,jdbcType=CHAR}, #{bdayScRound,jdbcType=CHAR},
+		#{bdayTaxRound,jdbcType=CHAR}, #{bdayDiscRound,jdbcType=CHAR}, #{bdayCheckRound,jdbcType=CHAR},
+		#{bdayPayRound,jdbcType=CHAR}, #{bdayGratuityRound,jdbcType=CHAR}, #{bdayItemDecimal,jdbcType=INTEGER},
+		#{bdayScDecimal,jdbcType=INTEGER}, #{bdayTaxDecimal,jdbcType=INTEGER}, #{bdayDiscDecimal,jdbcType=INTEGER},
+		#{bdayCheckDecimal,jdbcType=INTEGER}, #{bdayPayDecimal,jdbcType=INTEGER},
+		#{bdayGratuityDecimal,jdbcType=INTEGER},
+		#{bdayTaxScIncludeTaxScMask1,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask2,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask3,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask4,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask5,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask6,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask7,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask8,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask9,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask10,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask11,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask12,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask13,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask14,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask15,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask16,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask17,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask18,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask19,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask20,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask21,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask22,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask23,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask24,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask25,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask26,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask27,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask28,jdbcType=VARCHAR},
+		#{bdayTaxScIncludeTaxScMask29,jdbcType=VARCHAR}, #{bdayTaxScIncludeTaxScMask30,jdbcType=VARCHAR},
+		#{bdayTaxScIncludePreDisc,jdbcType=VARCHAR}, #{bdayTaxIncludeMidDisc,jdbcType=VARCHAR},
+		#{bdayGenerateCheckNumBy,jdbcType=CHAR}, #{bdayCheckPrefix,jdbcType=VARCHAR},
+		#{bdayStartCheckNum,jdbcType=INTEGER},
+		#{bdayEndCheckNum,jdbcType=INTEGER}, #{bdayNextCheckNum,jdbcType=INTEGER}, #{bdayResetCheckNum,jdbcType=CHAR},
+		#{bdayResetCheckNumMonth,jdbcType=INTEGER}, #{bdayResetCheckNumDay,jdbcType=INTEGER},
+		#{bdaySphrId,jdbcType=INTEGER}, #{bdayBaseCurrencyCode,jdbcType=VARCHAR},
+		#{bdayBaseCurrencyRate,jdbcType=DECIMAL},
+		#{bdayCustomData1,jdbcType=VARCHAR}, #{bdayStatus,jdbcType=CHAR}, #{bdaySlaveId,jdbcType=INTEGER},
+		#{bdaySlaveCreated,jdbcType=TIMESTAMP}, #{bdaySlaveModified,jdbcType=TIMESTAMP},
+		#{bdaySyncId,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, #{modified,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="com.shiji.entity.PosBusinessDays">
+		update pos_business_days
+		set bday_shop_id = #{bdayShopId,jdbcType=INTEGER},
+		bday_olet_id = #{bdayOletId,jdbcType=INTEGER},
+		bday_date = #{bdayDate,jdbcType=DATE},
+		bday_week = #{bdayWeek,jdbcType=INTEGER},
+		bday_day_of_week = #{bdayDayOfWeek,jdbcType=INTEGER},
+		bday_holiday_cald_id = #{bdayHolidayCaldId,jdbcType=INTEGER},
+		bday_day_before_holiday_cald_id = #{bdayDayBeforeHolidayCaldId,jdbcType=INTEGER},
+		bday_special_day_cald_id = #{bdaySpecialDayCaldId,jdbcType=INTEGER},
+		bday_day_before_special_day_cald_id = #{bdayDayBeforeSpecialDayCaldId,jdbcType=INTEGER},
+		bday_start_time = #{bdayStartTime,jdbcType=TIMESTAMP},
+		bday_start_loctime = #{bdayStartLoctime,jdbcType=TIMESTAMP},
+		bday_end_time = #{bdayEndTime,jdbcType=TIMESTAMP},
+		bday_end_loctime = #{bdayEndLoctime,jdbcType=TIMESTAMP},
+		bday_last_recall_time = #{bdayLastRecallTime,jdbcType=TIMESTAMP},
+		bday_last_recall_loctime = #{bdayLastRecallLoctime,jdbcType=TIMESTAMP},
+		bday_start_user_id = #{bdayStartUserId,jdbcType=INTEGER},
+		bday_end_user_id = #{bdayEndUserId,jdbcType=INTEGER},
+		bday_recall_user_id = #{bdayRecallUserId,jdbcType=INTEGER},
+		bday_recall_count = #{bdayRecallCount,jdbcType=INTEGER},
+		bday_price_level = #{bdayPriceLevel,jdbcType=INTEGER},
+		bday_sc1_rate = #{bdaySc1Rate,jdbcType=REAL},
+		bday_sc2_rate = #{bdaySc2Rate,jdbcType=REAL},
+		bday_sc3_rate = #{bdaySc3Rate,jdbcType=REAL},
+		bday_sc4_rate = #{bdaySc4Rate,jdbcType=REAL},
+		bday_sc5_rate = #{bdaySc5Rate,jdbcType=REAL},
+		bday_tax1_rate = #{bdayTax1Rate,jdbcType=REAL},
+		bday_tax2_rate = #{bdayTax2Rate,jdbcType=REAL},
+		bday_tax3_rate = #{bdayTax3Rate,jdbcType=REAL},
+		bday_tax4_rate = #{bdayTax4Rate,jdbcType=REAL},
+		bday_tax5_rate = #{bdayTax5Rate,jdbcType=REAL},
+		bday_tax6_rate = #{bdayTax6Rate,jdbcType=REAL},
+		bday_tax7_rate = #{bdayTax7Rate,jdbcType=REAL},
+		bday_tax8_rate = #{bdayTax8Rate,jdbcType=REAL},
+		bday_tax9_rate = #{bdayTax9Rate,jdbcType=REAL},
+		bday_tax10_rate = #{bdayTax10Rate,jdbcType=REAL},
+		bday_tax11_rate = #{bdayTax11Rate,jdbcType=REAL},
+		bday_tax12_rate = #{bdayTax12Rate,jdbcType=REAL},
+		bday_tax13_rate = #{bdayTax13Rate,jdbcType=REAL},
+		bday_tax14_rate = #{bdayTax14Rate,jdbcType=REAL},
+		bday_tax15_rate = #{bdayTax15Rate,jdbcType=REAL},
+		bday_tax16_rate = #{bdayTax16Rate,jdbcType=REAL},
+		bday_tax17_rate = #{bdayTax17Rate,jdbcType=REAL},
+		bday_tax18_rate = #{bdayTax18Rate,jdbcType=REAL},
+		bday_tax19_rate = #{bdayTax19Rate,jdbcType=REAL},
+		bday_tax20_rate = #{bdayTax20Rate,jdbcType=REAL},
+		bday_tax21_rate = #{bdayTax21Rate,jdbcType=REAL},
+		bday_tax22_rate = #{bdayTax22Rate,jdbcType=REAL},
+		bday_tax23_rate = #{bdayTax23Rate,jdbcType=REAL},
+		bday_tax24_rate = #{bdayTax24Rate,jdbcType=REAL},
+		bday_tax25_rate = #{bdayTax25Rate,jdbcType=REAL},
+		bday_item_round = #{bdayItemRound,jdbcType=CHAR},
+		bday_sc_round = #{bdayScRound,jdbcType=CHAR},
+		bday_tax_round = #{bdayTaxRound,jdbcType=CHAR},
+		bday_disc_round = #{bdayDiscRound,jdbcType=CHAR},
+		bday_check_round = #{bdayCheckRound,jdbcType=CHAR},
+		bday_pay_round = #{bdayPayRound,jdbcType=CHAR},
+		bday_gratuity_round = #{bdayGratuityRound,jdbcType=CHAR},
+		bday_item_decimal = #{bdayItemDecimal,jdbcType=INTEGER},
+		bday_sc_decimal = #{bdayScDecimal,jdbcType=INTEGER},
+		bday_tax_decimal = #{bdayTaxDecimal,jdbcType=INTEGER},
+		bday_disc_decimal = #{bdayDiscDecimal,jdbcType=INTEGER},
+		bday_check_decimal = #{bdayCheckDecimal,jdbcType=INTEGER},
+		bday_pay_decimal = #{bdayPayDecimal,jdbcType=INTEGER},
+		bday_gratuity_decimal = #{bdayGratuityDecimal,jdbcType=INTEGER},
+		bday_tax_sc_include_tax_sc_mask1 = #{bdayTaxScIncludeTaxScMask1,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask2 = #{bdayTaxScIncludeTaxScMask2,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask3 = #{bdayTaxScIncludeTaxScMask3,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask4 = #{bdayTaxScIncludeTaxScMask4,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask5 = #{bdayTaxScIncludeTaxScMask5,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask6 = #{bdayTaxScIncludeTaxScMask6,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask7 = #{bdayTaxScIncludeTaxScMask7,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask8 = #{bdayTaxScIncludeTaxScMask8,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask9 = #{bdayTaxScIncludeTaxScMask9,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask10 = #{bdayTaxScIncludeTaxScMask10,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask11 = #{bdayTaxScIncludeTaxScMask11,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask12 = #{bdayTaxScIncludeTaxScMask12,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask13 = #{bdayTaxScIncludeTaxScMask13,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask14 = #{bdayTaxScIncludeTaxScMask14,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask15 = #{bdayTaxScIncludeTaxScMask15,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask16 = #{bdayTaxScIncludeTaxScMask16,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask17 = #{bdayTaxScIncludeTaxScMask17,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask18 = #{bdayTaxScIncludeTaxScMask18,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask19 = #{bdayTaxScIncludeTaxScMask19,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask20 = #{bdayTaxScIncludeTaxScMask20,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask21 = #{bdayTaxScIncludeTaxScMask21,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask22 = #{bdayTaxScIncludeTaxScMask22,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask23 = #{bdayTaxScIncludeTaxScMask23,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask24 = #{bdayTaxScIncludeTaxScMask24,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask25 = #{bdayTaxScIncludeTaxScMask25,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask26 = #{bdayTaxScIncludeTaxScMask26,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask27 = #{bdayTaxScIncludeTaxScMask27,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask28 = #{bdayTaxScIncludeTaxScMask28,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask29 = #{bdayTaxScIncludeTaxScMask29,jdbcType=VARCHAR},
+		bday_tax_sc_include_tax_sc_mask30 = #{bdayTaxScIncludeTaxScMask30,jdbcType=VARCHAR},
+		bday_tax_sc_include_pre_disc = #{bdayTaxScIncludePreDisc,jdbcType=VARCHAR},
+		bday_tax_include_mid_disc = #{bdayTaxIncludeMidDisc,jdbcType=VARCHAR},
+		bday_generate_check_num_by = #{bdayGenerateCheckNumBy,jdbcType=CHAR},
+		bday_check_prefix = #{bdayCheckPrefix,jdbcType=VARCHAR},
+		bday_start_check_num = #{bdayStartCheckNum,jdbcType=INTEGER},
+		bday_end_check_num = #{bdayEndCheckNum,jdbcType=INTEGER},
+		bday_next_check_num = #{bdayNextCheckNum,jdbcType=INTEGER},
+		bday_reset_check_num = #{bdayResetCheckNum,jdbcType=CHAR},
+		bday_reset_check_num_month = #{bdayResetCheckNumMonth,jdbcType=INTEGER},
+		bday_reset_check_num_day = #{bdayResetCheckNumDay,jdbcType=INTEGER},
+		bday_sphr_id = #{bdaySphrId,jdbcType=INTEGER},
+		bday_base_currency_code = #{bdayBaseCurrencyCode,jdbcType=VARCHAR},
+		bday_base_currency_rate = #{bdayBaseCurrencyRate,jdbcType=DECIMAL},
+		bday_custom_data1 = #{bdayCustomData1,jdbcType=VARCHAR},
+		bday_status = #{bdayStatus,jdbcType=CHAR},
+		bday_slave_id = #{bdaySlaveId,jdbcType=INTEGER},
+		bday_slave_created = #{bdaySlaveCreated,jdbcType=TIMESTAMP},
+		bday_slave_modified = #{bdaySlaveModified,jdbcType=TIMESTAMP},
+		bday_sync_id = #{bdaySyncId,jdbcType=INTEGER},
+		created = #{created,jdbcType=TIMESTAMP},
+		modified = #{modified,jdbcType=TIMESTAMP}
+		where bday_id = #{bdayId,jdbcType=CHAR}
+	</update>
+	<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select
+		<include refid="posBusinessDays"/>
+		from pos_business_days
+		where bday_id = #{bdayId,jdbcType=CHAR}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select <include refid="posBusinessDays" />
+		from pos_business_days
+	</select>
+
+	<select id="findByDayId" resultType="java.lang.String">
+		select bday_id from pos_business_days where bday_date =#{businessDay}
+	</select>
+
+	<select id="findDateRangByDayId" resultType="java.lang.String">
+		select bday_id from pos_business_days where  bday_date &lt;= #{dendDateBusinessDay} and bday_date &gt;=#{dbeginDateBusinessDay}
+	</select>
+</mapper>

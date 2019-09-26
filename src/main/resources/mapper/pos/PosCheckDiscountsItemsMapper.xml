@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shiji.mapper.pos.PosCheckDiscountsItemsMapper">
+	<resultMap id="BaseResultMap" type="com.shiji.entity.PosCheckDiscountsItems">
+		<id column="cdit_id" jdbcType="CHAR" property="cditId"/>
+		<result column="cdit_olet_id" jdbcType="INTEGER" property="cditOletId"/>
+		<result column="cdit_cdis_id" jdbcType="CHAR" property="cditCdisId"/>
+		<result column="cdit_citm_id" jdbcType="CHAR" property="cditCitmId"/>
+		<result column="cdit_total" jdbcType="DOUBLE" property="cditTotal"/>
+		<result column="cdit_round_total" jdbcType="DECIMAL" property="cditRoundTotal"/>
+		<result column="cdit_status" jdbcType="CHAR" property="cditStatus"/>
+		<result column="cdit_slave_id" jdbcType="INTEGER" property="cditSlaveId"/>
+		<result column="cdit_slave_created" jdbcType="TIMESTAMP" property="cditSlaveCreated"/>
+		<result column="cdit_slave_modified" jdbcType="TIMESTAMP" property="cditSlaveModified"/>
+		<result column="cdit_sync_id" jdbcType="INTEGER" property="cditSyncId"/>
+		<result column="created" jdbcType="TIMESTAMP" property="created"/>
+		<result column="modified" jdbcType="TIMESTAMP" property="modified"/>
+	</resultMap>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from pos_check_discounts_items
+		where cdit_id = #{cditId,jdbcType=CHAR}
+	</delete>
+	<sql id="posCheckDiscountItems">
+		cdit_id, cdit_olet_id, cdit_cdis_id, cdit_citm_id, cdit_total, cdit_round_total,
+		cdit_status, cdit_slave_id, cdit_slave_created, cdit_slave_modified, cdit_sync_id,
+		created, modified
+	</sql>
+	<insert id="insert" parameterType="com.shiji.entity.PosCheckDiscountsItems">
+		insert into pos_check_discounts_items (<include refid="posCheckDiscountItems"/>)
+		values (#{cditId,jdbcType=CHAR}, #{cditOletId,jdbcType=INTEGER}, #{cditCdisId,jdbcType=CHAR},
+		#{cditCitmId,jdbcType=CHAR}, #{cditTotal,jdbcType=DOUBLE}, #{cditRoundTotal,jdbcType=DECIMAL},
+		#{cditStatus,jdbcType=CHAR}, #{cditSlaveId,jdbcType=INTEGER}, #{cditSlaveCreated,jdbcType=TIMESTAMP},
+		#{cditSlaveModified,jdbcType=TIMESTAMP}, #{cditSyncId,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP},
+		#{modified,jdbcType=TIMESTAMP})
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="com.shiji.entity.PosCheckDiscountsItems">
+		update pos_check_discounts_items
+		set cdit_olet_id = #{cditOletId,jdbcType=INTEGER},
+		cdit_cdis_id = #{cditCdisId,jdbcType=CHAR},
+		cdit_citm_id = #{cditCitmId,jdbcType=CHAR},
+		cdit_total = #{cditTotal,jdbcType=DOUBLE},
+		cdit_round_total = #{cditRoundTotal,jdbcType=DECIMAL},
+		cdit_status = #{cditStatus,jdbcType=CHAR},
+		cdit_slave_id = #{cditSlaveId,jdbcType=INTEGER},
+		cdit_slave_created = #{cditSlaveCreated,jdbcType=TIMESTAMP},
+		cdit_slave_modified = #{cditSlaveModified,jdbcType=TIMESTAMP},
+		cdit_sync_id = #{cditSyncId,jdbcType=INTEGER},
+		created = #{created,jdbcType=TIMESTAMP},
+		modified = #{modified,jdbcType=TIMESTAMP}
+		where cdit_id = #{cditId,jdbcType=CHAR}
+	</update>
+	<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select
+		<include refid="posCheckDiscountItems"/>
+		from pos_check_discounts_items
+		where cdit_id = #{cditId,jdbcType=CHAR}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select
+		<include refid="posCheckDiscountItems"/>
+		from pos_check_discounts_items
+	</select>
+	<select id="findPosCheckDiscountItemsByCdisId" resultType="java.util.Map">
+		select
+		<include refid="posCheckDiscountItems"/>
+		from pos_check_discounts_items where 1=1
+		<if test="list!=null">
+			and cdit_cdis_id in
+			<choose>
+				<when test="list.size()==0">
+					(null)
+				</when>
+				<when test="list.size()>0">
+					<foreach collection="list" index="index" item="cDisId" open="("
+							 separator="," close=")">
+						#{cDisId}
+					</foreach>
+				</when>
+			</choose>
+		</if>
+	</select>
+	<select id="findPosCheckDiscountItemsTotalByCdisId" resultType="java.util.Map">
+		SELECT
+		pcd.cdis_chks_id as chksId,
+		sum( pocdi.cdit_round_total ) as checkDiscountItemTotal
+		FROM
+		pos_check_discounts_items pocdi
+		LEFT JOIN pos_check_discounts pcd ON pocdi.cdit_cdis_id = pcd.cdis_id
+		WHERE
+		 pcd.cdis_citm_id != ''
+		<if test="list!=null">
+			and pcd.cdis_chks_id in
+			<choose>
+				<when test="list.size()==0">
+					(null)
+				</when>
+				<when test="list.size()>0">
+					<foreach collection="list" index="index" item="chksId" open="("
+							 separator="," close=")">
+						#{chksId}
+					</foreach>
+				</when>
+			</choose>
+		</if>
+		GROUP BY
+		pcd.cdis_chks_id
+	</select>
+</mapper>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shiji.mapper.pos.PosCheckPaymentsMapper">
+	<resultMap id="BaseResultMap" type="com.shiji.entity.PosCheckPayments">
+		<id column="cpay_id" jdbcType="CHAR" property="cpayId"/>
+		<result column="cpay_bday_id" jdbcType="CHAR" property="cpayBdayId"/>
+		<result column="cpay_bper_id" jdbcType="CHAR" property="cpayBperId"/>
+		<result column="cpay_shop_id" jdbcType="INTEGER" property="cpayShopId"/>
+		<result column="cpay_olet_id" jdbcType="INTEGER" property="cpayOletId"/>
+		<result column="cpay_chks_id" jdbcType="CHAR" property="cpayChksId"/>
+		<result column="cpay_cpty_id" jdbcType="CHAR" property="cpayCptyId"/>
+		<result column="cpay_paym_id" jdbcType="INTEGER" property="cpayPaymId"/>
+		<result column="cpay_name_l1" jdbcType="VARCHAR" property="cpayNameL1"/>
+		<result column="cpay_name_l2" jdbcType="VARCHAR" property="cpayNameL2"/>
+		<result column="cpay_name_l3" jdbcType="VARCHAR" property="cpayNameL3"/>
+		<result column="cpay_name_l4" jdbcType="VARCHAR" property="cpayNameL4"/>
+		<result column="cpay_name_l5" jdbcType="VARCHAR" property="cpayNameL5"/>
+		<result column="cpay_short_name_l1" jdbcType="VARCHAR" property="cpayShortNameL1"/>
+		<result column="cpay_short_name_l2" jdbcType="VARCHAR" property="cpayShortNameL2"/>
+		<result column="cpay_short_name_l3" jdbcType="VARCHAR" property="cpayShortNameL3"/>
+		<result column="cpay_short_name_l4" jdbcType="VARCHAR" property="cpayShortNameL4"/>
+		<result column="cpay_short_name_l5" jdbcType="VARCHAR" property="cpayShortNameL5"/>
+		<result column="cpay_payment_type" jdbcType="VARCHAR" property="cpayPaymentType"/>
+		<result column="cpay_seq" jdbcType="INTEGER" property="cpaySeq"/>
+		<result column="cpay_pay_total" jdbcType="DECIMAL" property="cpayPayTotal"/>
+		<result column="cpay_pay_tips" jdbcType="DECIMAL" property="cpayPayTips"/>
+		<result column="cpay_pay_surcharge" jdbcType="DECIMAL" property="cpayPaySurcharge"/>
+		<result column="cpay_pay_change" jdbcType="DECIMAL" property="cpayPayChange"/>
+		<result column="cpay_pay_foreign_currency" jdbcType="CHAR" property="cpayPayForeignCurrency"/>
+		<result column="cpay_pay_foreign_total" jdbcType="DECIMAL" property="cpayPayForeignTotal"/>
+		<result column="cpay_pay_foreign_tips" jdbcType="DECIMAL" property="cpayPayForeignTips"/>
+		<result column="cpay_pay_foreign_surcharge" jdbcType="DECIMAL" property="cpayPayForeignSurcharge"/>
+		<result column="cpay_pay_foreign_change" jdbcType="DECIMAL" property="cpayPayForeignChange"/>
+		<result column="cpay_currency_code" jdbcType="VARCHAR" property="cpayCurrencyCode"/>
+		<result column="cpay_currency_rate" jdbcType="DECIMAL" property="cpayCurrencyRate"/>
+		<result column="cpay_change_back_currency" jdbcType="CHAR" property="cpayChangeBackCurrency"/>
+		<result column="cpay_special" jdbcType="CHAR" property="cpaySpecial"/>
+		<result column="cpay_non_revenue" jdbcType="CHAR" property="cpayNonRevenue"/>
+		<result column="cpay_memb_id" jdbcType="INTEGER" property="cpayMembId"/>
+		<result column="cpay_meal_user_id" jdbcType="INTEGER" property="cpayMealUserId"/>
+		<result column="cpay_pay_time" jdbcType="TIMESTAMP" property="cpayPayTime"/>
+		<result column="cpay_pay_loctime" jdbcType="TIMESTAMP" property="cpayPayLoctime"/>
+		<result column="cpay_pay_user_id" jdbcType="INTEGER" property="cpayPayUserId"/>
+		<result column="cpay_pay_stat_id" jdbcType="INTEGER" property="cpayPayStatId"/>
+		<result column="cpay_void_time" jdbcType="TIMESTAMP" property="cpayVoidTime"/>
+		<result column="cpay_void_loctime" jdbcType="TIMESTAMP" property="cpayVoidLoctime"/>
+		<result column="cpay_void_user_id" jdbcType="INTEGER" property="cpayVoidUserId"/>
+		<result column="cpay_void_stat_id" jdbcType="INTEGER" property="cpayVoidStatId"/>
+		<result column="cpay_void_vdrs_id" jdbcType="INTEGER" property="cpayVoidVdrsId"/>
+		<result column="cpay_status" jdbcType="CHAR" property="cpayStatus"/>
+		<result column="cpay_slave_id" jdbcType="INTEGER" property="cpaySlaveId"/>
+		<result column="cpay_slave_created" jdbcType="TIMESTAMP" property="cpaySlaveCreated"/>
+		<result column="cpay_slave_modified" jdbcType="TIMESTAMP" property="cpaySlaveModified"/>
+		<result column="cpay_sync_id" jdbcType="INTEGER" property="cpaySyncId"/>
+		<result column="created" jdbcType="TIMESTAMP" property="created"/>
+		<result column="modified" jdbcType="TIMESTAMP" property="modified"/>
+		<result column="cpay_ref_data1" jdbcType="LONGVARCHAR" property="cpayRefData1"/>
+		<result column="cpay_ref_data2" jdbcType="LONGVARCHAR" property="cpayRefData2"/>
+		<result column="cpay_ref_data3" jdbcType="LONGVARCHAR" property="cpayRefData3"/>
+	</resultMap>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from pos_check_payments
+		where cpay_id = #{cpayId,jdbcType=CHAR}
+	</delete>
+	<sql id="posCheckPaymentsField">
+		cpay_id, cpay_bday_id, cpay_bper_id,
+		cpay_shop_id, cpay_olet_id, cpay_chks_id,
+		cpay_cpty_id, cpay_paym_id, cpay_name_l1,
+		cpay_name_l2, cpay_name_l3, cpay_name_l4,
+		cpay_name_l5, cpay_short_name_l1, cpay_short_name_l2,
+		cpay_short_name_l3, cpay_short_name_l4, cpay_short_name_l5,
+		cpay_payment_type, cpay_seq, cpay_pay_total,
+		cpay_pay_tips, cpay_pay_surcharge, cpay_pay_change,
+		cpay_pay_foreign_currency, cpay_pay_foreign_total,
+		cpay_pay_foreign_tips, cpay_pay_foreign_surcharge,
+		cpay_pay_foreign_change, cpay_currency_code,
+		cpay_currency_rate, cpay_change_back_currency,
+		cpay_special, cpay_non_revenue, cpay_memb_id,
+		cpay_meal_user_id, cpay_pay_time, cpay_pay_loctime,
+		cpay_pay_user_id, cpay_pay_stat_id, cpay_void_time,
+		cpay_void_loctime, cpay_void_user_id, cpay_void_stat_id,
+		cpay_void_vdrs_id, cpay_status, cpay_slave_id,
+		cpay_slave_created, cpay_slave_modified,
+		cpay_sync_id, created, modified,
+		cpay_ref_data1, cpay_ref_data2, cpay_ref_data3
+	</sql>
+	<insert id="insert" parameterType="com.shiji.entity.PosCheckPayments">
+		insert into pos_check_payments (
+		<include refid="posCheckPaymentsField"/>
+		)
+		values (#{cpayId,jdbcType=CHAR}, #{cpayBdayId,jdbcType=CHAR}, #{cpayBperId,jdbcType=CHAR},
+		#{cpayShopId,jdbcType=INTEGER}, #{cpayOletId,jdbcType=INTEGER}, #{cpayChksId,jdbcType=CHAR},
+		#{cpayCptyId,jdbcType=CHAR}, #{cpayPaymId,jdbcType=INTEGER}, #{cpayNameL1,jdbcType=VARCHAR},
+		#{cpayNameL2,jdbcType=VARCHAR}, #{cpayNameL3,jdbcType=VARCHAR}, #{cpayNameL4,jdbcType=VARCHAR},
+		#{cpayNameL5,jdbcType=VARCHAR}, #{cpayShortNameL1,jdbcType=VARCHAR}, #{cpayShortNameL2,jdbcType=VARCHAR},
+		#{cpayShortNameL3,jdbcType=VARCHAR}, #{cpayShortNameL4,jdbcType=VARCHAR}, #{cpayShortNameL5,jdbcType=VARCHAR},
+		#{cpayPaymentType,jdbcType=VARCHAR}, #{cpaySeq,jdbcType=INTEGER}, #{cpayPayTotal,jdbcType=DECIMAL},
+		#{cpayPayTips,jdbcType=DECIMAL}, #{cpayPaySurcharge,jdbcType=DECIMAL}, #{cpayPayChange,jdbcType=DECIMAL},
+		#{cpayPayForeignCurrency,jdbcType=CHAR}, #{cpayPayForeignTotal,jdbcType=DECIMAL},
+		#{cpayPayForeignTips,jdbcType=DECIMAL}, #{cpayPayForeignSurcharge,jdbcType=DECIMAL},
+		#{cpayPayForeignChange,jdbcType=DECIMAL}, #{cpayCurrencyCode,jdbcType=VARCHAR},
+		#{cpayCurrencyRate,jdbcType=DECIMAL}, #{cpayChangeBackCurrency,jdbcType=CHAR},
+		#{cpaySpecial,jdbcType=CHAR}, #{cpayNonRevenue,jdbcType=CHAR}, #{cpayMembId,jdbcType=INTEGER},
+		#{cpayMealUserId,jdbcType=INTEGER}, #{cpayPayTime,jdbcType=TIMESTAMP}, #{cpayPayLoctime,jdbcType=TIMESTAMP},
+		#{cpayPayUserId,jdbcType=INTEGER}, #{cpayPayStatId,jdbcType=INTEGER}, #{cpayVoidTime,jdbcType=TIMESTAMP},
+		#{cpayVoidLoctime,jdbcType=TIMESTAMP}, #{cpayVoidUserId,jdbcType=INTEGER}, #{cpayVoidStatId,jdbcType=INTEGER},
+		#{cpayVoidVdrsId,jdbcType=INTEGER}, #{cpayStatus,jdbcType=CHAR}, #{cpaySlaveId,jdbcType=INTEGER},
+		#{cpaySlaveCreated,jdbcType=TIMESTAMP}, #{cpaySlaveModified,jdbcType=TIMESTAMP},
+		#{cpaySyncId,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, #{modified,jdbcType=TIMESTAMP},
+		#{cpayRefData1,jdbcType=LONGVARCHAR}, #{cpayRefData2,jdbcType=LONGVARCHAR}, #{cpayRefData3,jdbcType=LONGVARCHAR}
+		)
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="com.shiji.entity.PosCheckPayments">
+		update pos_check_payments
+		set cpay_bday_id = #{cpayBdayId,jdbcType=CHAR},
+		cpay_bper_id = #{cpayBperId,jdbcType=CHAR},
+		cpay_shop_id = #{cpayShopId,jdbcType=INTEGER},
+		cpay_olet_id = #{cpayOletId,jdbcType=INTEGER},
+		cpay_chks_id = #{cpayChksId,jdbcType=CHAR},
+		cpay_cpty_id = #{cpayCptyId,jdbcType=CHAR},
+		cpay_paym_id = #{cpayPaymId,jdbcType=INTEGER},
+		cpay_name_l1 = #{cpayNameL1,jdbcType=VARCHAR},
+		cpay_name_l2 = #{cpayNameL2,jdbcType=VARCHAR},
+		cpay_name_l3 = #{cpayNameL3,jdbcType=VARCHAR},
+		cpay_name_l4 = #{cpayNameL4,jdbcType=VARCHAR},
+		cpay_name_l5 = #{cpayNameL5,jdbcType=VARCHAR},
+		cpay_short_name_l1 = #{cpayShortNameL1,jdbcType=VARCHAR},
+		cpay_short_name_l2 = #{cpayShortNameL2,jdbcType=VARCHAR},
+		cpay_short_name_l3 = #{cpayShortNameL3,jdbcType=VARCHAR},
+		cpay_short_name_l4 = #{cpayShortNameL4,jdbcType=VARCHAR},
+		cpay_short_name_l5 = #{cpayShortNameL5,jdbcType=VARCHAR},
+		cpay_payment_type = #{cpayPaymentType,jdbcType=VARCHAR},
+		cpay_seq = #{cpaySeq,jdbcType=INTEGER},
+		cpay_pay_total = #{cpayPayTotal,jdbcType=DECIMAL},
+		cpay_pay_tips = #{cpayPayTips,jdbcType=DECIMAL},
+		cpay_pay_surcharge = #{cpayPaySurcharge,jdbcType=DECIMAL},
+		cpay_pay_change = #{cpayPayChange,jdbcType=DECIMAL},
+		cpay_pay_foreign_currency = #{cpayPayForeignCurrency,jdbcType=CHAR},
+		cpay_pay_foreign_total = #{cpayPayForeignTotal,jdbcType=DECIMAL},
+		cpay_pay_foreign_tips = #{cpayPayForeignTips,jdbcType=DECIMAL},
+		cpay_pay_foreign_surcharge = #{cpayPayForeignSurcharge,jdbcType=DECIMAL},
+		cpay_pay_foreign_change = #{cpayPayForeignChange,jdbcType=DECIMAL},
+		cpay_currency_code = #{cpayCurrencyCode,jdbcType=VARCHAR},
+		cpay_currency_rate = #{cpayCurrencyRate,jdbcType=DECIMAL},
+		cpay_change_back_currency = #{cpayChangeBackCurrency,jdbcType=CHAR},
+		cpay_special = #{cpaySpecial,jdbcType=CHAR},
+		cpay_non_revenue = #{cpayNonRevenue,jdbcType=CHAR},
+		cpay_memb_id = #{cpayMembId,jdbcType=INTEGER},
+		cpay_meal_user_id = #{cpayMealUserId,jdbcType=INTEGER},
+		cpay_pay_time = #{cpayPayTime,jdbcType=TIMESTAMP},
+		cpay_pay_loctime = #{cpayPayLoctime,jdbcType=TIMESTAMP},
+		cpay_pay_user_id = #{cpayPayUserId,jdbcType=INTEGER},
+		cpay_pay_stat_id = #{cpayPayStatId,jdbcType=INTEGER},
+		cpay_void_time = #{cpayVoidTime,jdbcType=TIMESTAMP},
+		cpay_void_loctime = #{cpayVoidLoctime,jdbcType=TIMESTAMP},
+		cpay_void_user_id = #{cpayVoidUserId,jdbcType=INTEGER},
+		cpay_void_stat_id = #{cpayVoidStatId,jdbcType=INTEGER},
+		cpay_void_vdrs_id = #{cpayVoidVdrsId,jdbcType=INTEGER},
+		cpay_status = #{cpayStatus,jdbcType=CHAR},
+		cpay_slave_id = #{cpaySlaveId,jdbcType=INTEGER},
+		cpay_slave_created = #{cpaySlaveCreated,jdbcType=TIMESTAMP},
+		cpay_slave_modified = #{cpaySlaveModified,jdbcType=TIMESTAMP},
+		cpay_sync_id = #{cpaySyncId,jdbcType=INTEGER},
+		created = #{created,jdbcType=TIMESTAMP},
+		modified = #{modified,jdbcType=TIMESTAMP},
+		cpay_ref_data1 = #{cpayRefData1,jdbcType=LONGVARCHAR},
+		cpay_ref_data2 = #{cpayRefData2,jdbcType=LONGVARCHAR},
+		cpay_ref_data3 = #{cpayRefData3,jdbcType=LONGVARCHAR}
+		where cpay_id = #{cpayId,jdbcType=CHAR}
+	</update>
+	<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select
+		<include refid="posCheckPaymentsField"/>
+		from pos_check_payments
+		where cpay_id = #{cpayId,jdbcType=CHAR}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select
+		<include refid="posCheckPaymentsField"/>
+		from pos_check_payments
+	</select>
+	<select id="findPoscheckPaymentsByChksid" resultType="java.util.Map">
+		select
+		<include refid="posCheckPaymentsField"/>
+		from pos_check_payments where 1=1
+		<if test="list!=null">
+			and cpay_chks_id in
+			<choose>
+				<when test="list.size()==0">
+					(null)
+				</when>
+				<when test="list.size()>0">
+					<foreach collection="list" index="index" item="chksId" open="("
+							 separator="," close=")">
+						#{chksId}
+					</foreach>
+				</when>
+			</choose>
+		</if>
+	</select>
+
+	<select id="findPoscheckPaymentsTotalByChksid" resultType="java.util.Map">
+		select
+		cpay_chks_id as chksId,sum(cpay_pay_total) as paymentPayTotal
+		from pos_check_payments where 1=1
+		<if test="list!=null">
+			and cpay_chks_id in
+			<choose>
+				<when test="list.size()==0">
+					(null)
+				</when>
+				<when test="list.size()>0">
+					<foreach collection="list" index="index" item="chksId" open="("
+							 separator="," close=")">
+						#{chksId}
+					</foreach>
+				</when>
+			</choose>
+		</if>
+		group by cpay_chks_id
+	</select>
+</mapper>

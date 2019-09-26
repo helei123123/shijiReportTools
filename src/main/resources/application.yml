@@ -1,0 +1,35 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: shiji-report
+  datasource:
+    pos:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1/hero_pos?characterEncoding=utf-8
+      username: heroadmin
+      password: infrasys
+    outlet:
+      driver-class-name: com.mysql.jdbc.Driver
+      jdbc-url: jdbc:mysql://127.0.0.1/hero_outlet?characterEncoding=utf-8
+      username: heroadmin
+      password: infrasys
+  jpa:
+    database: mysql
+    show-sql: true
+  #SpringMvc相关页面解析器配置
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+mybatis:
+  #  mapper-locations: classpath:mapper/*Mapper.xml
+  typeAliasesPackage: com.shiji.entity
+  configuration:
+    map-underscore-to-camel-case: true
+#显示sql语句
+logging:
+  level:
+    com:
+      shiji:
+        mapper: debug

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shiji.mapper.pos.PosCheckDiscountsMapper">
+	<resultMap id="BaseResultMap" type="com.shiji.entity.PosCheckDiscounts">
+		<id column="cdis_id" jdbcType="CHAR" property="cdisId"/>
+		<result column="cdis_bday_id" jdbcType="CHAR" property="cdisBdayId"/>
+		<result column="cdis_bper_id" jdbcType="CHAR" property="cdisBperId"/>
+		<result column="cdis_shop_id" jdbcType="INTEGER" property="cdisShopId"/>
+		<result column="cdis_olet_id" jdbcType="INTEGER" property="cdisOletId"/>
+		<result column="cdis_chks_id" jdbcType="CHAR" property="cdisChksId"/>
+		<result column="cdis_cpty_id" jdbcType="CHAR" property="cdisCptyId"/>
+		<result column="cdis_citm_id" jdbcType="CHAR" property="cdisCitmId"/>
+		<result column="cdis_dtyp_id" jdbcType="INTEGER" property="cdisDtypId"/>
+		<result column="cdis_name_l1" jdbcType="VARCHAR" property="cdisNameL1"/>
+		<result column="cdis_name_l2" jdbcType="VARCHAR" property="cdisNameL2"/>
+		<result column="cdis_name_l3" jdbcType="VARCHAR" property="cdisNameL3"/>
+		<result column="cdis_name_l4" jdbcType="VARCHAR" property="cdisNameL4"/>
+		<result column="cdis_name_l5" jdbcType="VARCHAR" property="cdisNameL5"/>
+		<result column="cdis_short_name_l1" jdbcType="VARCHAR" property="cdisShortNameL1"/>
+		<result column="cdis_short_name_l2" jdbcType="VARCHAR" property="cdisShortNameL2"/>
+		<result column="cdis_short_name_l3" jdbcType="VARCHAR" property="cdisShortNameL3"/>
+		<result column="cdis_short_name_l4" jdbcType="VARCHAR" property="cdisShortNameL4"/>
+		<result column="cdis_short_name_l5" jdbcType="VARCHAR" property="cdisShortNameL5"/>
+		<result column="cdis_dgrp_id" jdbcType="INTEGER" property="cdisDgrpId"/>
+		<result column="cdis_seq" jdbcType="INTEGER" property="cdisSeq"/>
+		<result column="cdis_round_total" jdbcType="DECIMAL" property="cdisRoundTotal"/>
+		<result column="cdis_total" jdbcType="DOUBLE" property="cdisTotal"/>
+		<result column="cdis_round_amount" jdbcType="DOUBLE" property="cdisRoundAmount"/>
+		<result column="cdis_method" jdbcType="CHAR" property="cdisMethod"/>
+		<result column="cdis_type" jdbcType="CHAR" property="cdisType"/>
+		<result column="cdis_used_for" jdbcType="CHAR" property="cdisUsedFor"/>
+		<result column="cdis_class_key" jdbcType="VARCHAR" property="cdisClassKey"/>
+		<result column="cdis_rate" jdbcType="REAL" property="cdisRate"/>
+		<result column="cdis_fix_amount" jdbcType="DECIMAL" property="cdisFixAmount"/>
+		<result column="cdis_include_tax_sc_mask" jdbcType="VARCHAR" property="cdisIncludeTaxScMask"/>
+		<result column="cdis_include_pre_disc" jdbcType="CHAR" property="cdisIncludePreDisc"/>
+		<result column="cdis_include_mid_disc" jdbcType="CHAR" property="cdisIncludeMidDisc"/>
+		<result column="cdis_apply_time" jdbcType="TIMESTAMP" property="cdisApplyTime"/>
+		<result column="cdis_apply_loctime" jdbcType="TIMESTAMP" property="cdisApplyLoctime"/>
+		<result column="cdis_apply_user_id" jdbcType="INTEGER" property="cdisApplyUserId"/>
+		<result column="cdis_apply_stat_id" jdbcType="INTEGER" property="cdisApplyStatId"/>
+		<result column="cdis_void_time" jdbcType="TIMESTAMP" property="cdisVoidTime"/>
+		<result column="cdis_void_loctime" jdbcType="TIMESTAMP" property="cdisVoidLoctime"/>
+		<result column="cdis_void_user_id" jdbcType="INTEGER" property="cdisVoidUserId"/>
+		<result column="cdis_void_stat_id" jdbcType="INTEGER" property="cdisVoidStatId"/>
+		<result column="cdis_void_vdrs_id" jdbcType="INTEGER" property="cdisVoidVdrsId"/>
+		<result column="cdis_status" jdbcType="CHAR" property="cdisStatus"/>
+		<result column="cdis_slave_id" jdbcType="INTEGER" property="cdisSlaveId"/>
+		<result column="cdis_slave_created" jdbcType="TIMESTAMP" property="cdisSlaveCreated"/>
+		<result column="cdis_slave_modified" jdbcType="TIMESTAMP" property="cdisSlaveModified"/>
+		<result column="cdis_sync_id" jdbcType="INTEGER" property="cdisSyncId"/>
+		<result column="created" jdbcType="TIMESTAMP" property="created"/>
+		<result column="modified" jdbcType="TIMESTAMP" property="modified"/>
+	</resultMap>
+	<sql id="posCheckDiscountsField">
+		cdis_id, cdis_bday_id, cdis_bper_id, cdis_shop_id, cdis_olet_id, cdis_chks_id,
+		cdis_cpty_id, cdis_citm_id, cdis_dtyp_id, cdis_name_l1, cdis_name_l2, cdis_name_l3,
+		cdis_name_l4, cdis_name_l5, cdis_short_name_l1, cdis_short_name_l2, cdis_short_name_l3,
+		cdis_short_name_l4, cdis_short_name_l5, cdis_dgrp_id, cdis_seq, cdis_round_total,
+		cdis_total, cdis_round_amount, cdis_method, cdis_type, cdis_used_for, cdis_class_key,
+		cdis_rate, cdis_fix_amount, cdis_include_tax_sc_mask, cdis_include_pre_disc, cdis_include_mid_disc,
+		cdis_apply_time, cdis_apply_loctime, cdis_apply_user_id, cdis_apply_stat_id, cdis_void_time,
+		cdis_void_loctime, cdis_void_user_id, cdis_void_stat_id, cdis_void_vdrs_id, cdis_status,
+		cdis_slave_id, cdis_slave_created, cdis_slave_modified, cdis_sync_id, created, modified
+	</sql>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from pos_check_discounts
+		where cdis_id = #{cdisId,jdbcType=CHAR}
+	</delete>
+	<insert id="insert" parameterType="com.shiji.entity.PosCheckDiscounts">
+		insert into pos_check_discounts (
+		<include refid="posCheckDiscountsField"/>
+		)
+		values (#{cdisId,jdbcType=CHAR}, #{cdisBdayId,jdbcType=CHAR}, #{cdisBperId,jdbcType=CHAR},
+		#{cdisShopId,jdbcType=INTEGER}, #{cdisOletId,jdbcType=INTEGER}, #{cdisChksId,jdbcType=CHAR},
+		#{cdisCptyId,jdbcType=CHAR}, #{cdisCitmId,jdbcType=CHAR}, #{cdisDtypId,jdbcType=INTEGER},
+		#{cdisNameL1,jdbcType=VARCHAR}, #{cdisNameL2,jdbcType=VARCHAR}, #{cdisNameL3,jdbcType=VARCHAR},
+		#{cdisNameL4,jdbcType=VARCHAR}, #{cdisNameL5,jdbcType=VARCHAR}, #{cdisShortNameL1,jdbcType=VARCHAR},
+		#{cdisShortNameL2,jdbcType=VARCHAR}, #{cdisShortNameL3,jdbcType=VARCHAR}, #{cdisShortNameL4,jdbcType=VARCHAR},
+		#{cdisShortNameL5,jdbcType=VARCHAR}, #{cdisDgrpId,jdbcType=INTEGER}, #{cdisSeq,jdbcType=INTEGER},
+		#{cdisRoundTotal,jdbcType=DECIMAL}, #{cdisTotal,jdbcType=DOUBLE}, #{cdisRoundAmount,jdbcType=DOUBLE},
+		#{cdisMethod,jdbcType=CHAR}, #{cdisType,jdbcType=CHAR}, #{cdisUsedFor,jdbcType=CHAR},
+		#{cdisClassKey,jdbcType=VARCHAR}, #{cdisRate,jdbcType=REAL}, #{cdisFixAmount,jdbcType=DECIMAL},
+		#{cdisIncludeTaxScMask,jdbcType=VARCHAR}, #{cdisIncludePreDisc,jdbcType=CHAR},
+		#{cdisIncludeMidDisc,jdbcType=CHAR}, #{cdisApplyTime,jdbcType=TIMESTAMP},
+		#{cdisApplyLoctime,jdbcType=TIMESTAMP},
+		#{cdisApplyUserId,jdbcType=INTEGER}, #{cdisApplyStatId,jdbcType=INTEGER}, #{cdisVoidTime,jdbcType=TIMESTAMP},
+		#{cdisVoidLoctime,jdbcType=TIMESTAMP}, #{cdisVoidUserId,jdbcType=INTEGER}, #{cdisVoidStatId,jdbcType=INTEGER},
+		#{cdisVoidVdrsId,jdbcType=INTEGER}, #{cdisStatus,jdbcType=CHAR}, #{cdisSlaveId,jdbcType=INTEGER},
+		#{cdisSlaveCreated,jdbcType=TIMESTAMP}, #{cdisSlaveModified,jdbcType=TIMESTAMP},
+		#{cdisSyncId,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, #{modified,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="com.shiji.entity.PosCheckDiscounts">
+		update pos_check_discounts
+		set cdis_bday_id = #{cdisBdayId,jdbcType=CHAR},
+		cdis_bper_id = #{cdisBperId,jdbcType=CHAR},
+		cdis_shop_id = #{cdisShopId,jdbcType=INTEGER},
+		cdis_olet_id = #{cdisOletId,jdbcType=INTEGER},
+		cdis_chks_id = #{cdisChksId,jdbcType=CHAR},
+		cdis_cpty_id = #{cdisCptyId,jdbcType=CHAR},
+		cdis_citm_id = #{cdisCitmId,jdbcType=CHAR},
+		cdis_dtyp_id = #{cdisDtypId,jdbcType=INTEGER},
+		cdis_name_l1 = #{cdisNameL1,jdbcType=VARCHAR},
+		cdis_name_l2 = #{cdisNameL2,jdbcType=VARCHAR},
+		cdis_name_l3 = #{cdisNameL3,jdbcType=VARCHAR},
+		cdis_name_l4 = #{cdisNameL4,jdbcType=VARCHAR},
+		cdis_name_l5 = #{cdisNameL5,jdbcType=VARCHAR},
+		cdis_short_name_l1 = #{cdisShortNameL1,jdbcType=VARCHAR},
+		cdis_short_name_l2 = #{cdisShortNameL2,jdbcType=VARCHAR},
+		cdis_short_name_l3 = #{cdisShortNameL3,jdbcType=VARCHAR},
+		cdis_short_name_l4 = #{cdisShortNameL4,jdbcType=VARCHAR},
+		cdis_short_name_l5 = #{cdisShortNameL5,jdbcType=VARCHAR},
+		cdis_dgrp_id = #{cdisDgrpId,jdbcType=INTEGER},
+		cdis_seq = #{cdisSeq,jdbcType=INTEGER},
+		cdis_round_total = #{cdisRoundTotal,jdbcType=DECIMAL},
+		cdis_total = #{cdisTotal,jdbcType=DOUBLE},
+		cdis_round_amount = #{cdisRoundAmount,jdbcType=DOUBLE},
+		cdis_method = #{cdisMethod,jdbcType=CHAR},
+		cdis_type = #{cdisType,jdbcType=CHAR},
+		cdis_used_for = #{cdisUsedFor,jdbcType=CHAR},
+		cdis_class_key = #{cdisClassKey,jdbcType=VARCHAR},
+		cdis_rate = #{cdisRate,jdbcType=REAL},
+		cdis_fix_amount = #{cdisFixAmount,jdbcType=DECIMAL},
+		cdis_include_tax_sc_mask = #{cdisIncludeTaxScMask,jdbcType=VARCHAR},
+		cdis_include_pre_disc = #{cdisIncludePreDisc,jdbcType=CHAR},
+		cdis_include_mid_disc = #{cdisIncludeMidDisc,jdbcType=CHAR},
+		cdis_apply_time = #{cdisApplyTime,jdbcType=TIMESTAMP},
+		cdis_apply_loctime = #{cdisApplyLoctime,jdbcType=TIMESTAMP},
+		cdis_apply_user_id = #{cdisApplyUserId,jdbcType=INTEGER},
+		cdis_apply_stat_id = #{cdisApplyStatId,jdbcType=INTEGER},
+		cdis_void_time = #{cdisVoidTime,jdbcType=TIMESTAMP},
+		cdis_void_loctime = #{cdisVoidLoctime,jdbcType=TIMESTAMP},
+		cdis_void_user_id = #{cdisVoidUserId,jdbcType=INTEGER},
+		cdis_void_stat_id = #{cdisVoidStatId,jdbcType=INTEGER},
+		cdis_void_vdrs_id = #{cdisVoidVdrsId,jdbcType=INTEGER},
+		cdis_status = #{cdisStatus,jdbcType=CHAR},
+		cdis_slave_id = #{cdisSlaveId,jdbcType=INTEGER},
+		cdis_slave_created = #{cdisSlaveCreated,jdbcType=TIMESTAMP},
+		cdis_slave_modified = #{cdisSlaveModified,jdbcType=TIMESTAMP},
+		cdis_sync_id = #{cdisSyncId,jdbcType=INTEGER},
+		created = #{created,jdbcType=TIMESTAMP},
+		modified = #{modified,jdbcType=TIMESTAMP}
+		where cdis_id = #{cdisId,jdbcType=CHAR}
+	</update>
+	<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select
+		<include refid="posCheckDiscountsField"/>
+		from pos_check_discounts
+		where cdis_id = #{cdisId,jdbcType=CHAR}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select
+		<include refid="posCheckDiscountsField"/>
+		from pos_check_discounts
+	</select>
+
+	<select id="findPosCheckDiscountsByChksid" resultType="java.util.Map">
+		select
+		<include refid="posCheckDiscountsField"/>
+		from pos_check_discounts where 1=1
+		<if test="list!=null">
+			and cdis_chks_id in
+			<choose>
+				<when test="list.size()==0">
+					(null)
+				</when>
+				<when test="list.size()>0">
+					<foreach collection="list" index="index" item="chksId" open="("
+							 separator="," close=")">
+						#{chksId}
+					</foreach>
+				</when>
+			</choose>
+		</if>
+	</select>
+	<select id="findPosCheckDiscountsByChksidAndDiscounttotal" resultType="java.util.Map">
+		select
+		cdis_chks_id as chksId ,sum(cdis_round_total) as discountTotal
+		from pos_check_discounts where 1=1
+		<if test="list!=null">
+			and cdis_chks_id in
+			<choose>
+				<when test="list.size()==0">
+					(null)
+				</when>
+				<when test="list.size()>0">
+					<foreach collection="list" index="index" item="chksId" open="("
+							 separator="," close=")">
+						#{chksId}
+					</foreach>
+				</when>
+			</choose>
+		</if>
+		group by cdis_chks_id
+	</select>
+</mapper>

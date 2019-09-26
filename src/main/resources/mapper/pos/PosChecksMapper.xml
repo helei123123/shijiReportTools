@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shiji.mapper.pos.PosChecksMapper">
+	<resultMap id="BaseResultMap" type="com.shiji.entity.PosChecks">
+		<id column="chks_id" jdbcType="CHAR" property="chksId"/>
+		<result column="chks_bday_id" jdbcType="CHAR" property="chksBdayId"/>
+		<result column="chks_bper_id" jdbcType="CHAR" property="chksBperId"/>
+		<result column="chks_shop_id" jdbcType="INTEGER" property="chksShopId"/>
+		<result column="chks_olet_id" jdbcType="INTEGER" property="chksOletId"/>
+		<result column="chks_sect_id" jdbcType="INTEGER" property="chksSectId"/>
+		<result column="chks_aif" jdbcType="INTEGER" property="chksAif"/>
+		<result column="chks_txn" jdbcType="INTEGER" property="chksTxn"/>
+		<result column="chks_check_prefix" jdbcType="VARCHAR" property="chksCheckPrefix"/>
+		<result column="chks_check_num" jdbcType="INTEGER" property="chksCheckNum"/>
+		<result column="chks_check_prefix_num" jdbcType="VARCHAR" property="chksCheckPrefixNum"/>
+		<result column="chks_gen_check_num_type" jdbcType="CHAR" property="chksGenCheckNumType"/>
+		<result column="chks_ctbl_id" jdbcType="CHAR" property="chksCtblId"/>
+		<result column="chks_guests" jdbcType="INTEGER" property="chksGuests"/>
+		<result column="chks_children" jdbcType="INTEGER" property="chksChildren"/>
+		<result column="chks_print_count" jdbcType="INTEGER" property="chksPrintCount"/>
+		<result column="chks_receipt_print_count" jdbcType="INTEGER" property="chksReceiptPrintCount"/>
+		<result column="chks_party_count" jdbcType="INTEGER" property="chksPartyCount"/>
+		<result column="chks_check_total" jdbcType="DECIMAL" property="chksCheckTotal"/>
+		<result column="chks_item_total" jdbcType="DECIMAL" property="chksItemTotal"/>
+		<result column="chks_sc1" jdbcType="DECIMAL" property="chksSc1"/>
+		<result column="chks_sc2" jdbcType="DECIMAL" property="chksSc2"/>
+		<result column="chks_sc3" jdbcType="DECIMAL" property="chksSc3"/>
+		<result column="chks_sc4" jdbcType="DECIMAL" property="chksSc4"/>
+		<result column="chks_sc5" jdbcType="DECIMAL" property="chksSc5"/>
+		<result column="chks_tax1" jdbcType="DECIMAL" property="chksTax1"/>
+		<result column="chks_tax2" jdbcType="DECIMAL" property="chksTax2"/>
+		<result column="chks_tax3" jdbcType="DECIMAL" property="chksTax3"/>
+		<result column="chks_tax4" jdbcType="DECIMAL" property="chksTax4"/>
+		<result column="chks_tax5" jdbcType="DECIMAL" property="chksTax5"/>
+		<result column="chks_tax6" jdbcType="DECIMAL" property="chksTax6"/>
+		<result column="chks_tax7" jdbcType="DECIMAL" property="chksTax7"/>
+		<result column="chks_tax8" jdbcType="DECIMAL" property="chksTax8"/>
+		<result column="chks_tax9" jdbcType="DECIMAL" property="chksTax9"/>
+		<result column="chks_tax10" jdbcType="DECIMAL" property="chksTax10"/>
+		<result column="chks_tax11" jdbcType="DECIMAL" property="chksTax11"/>
+		<result column="chks_tax12" jdbcType="DECIMAL" property="chksTax12"/>
+		<result column="chks_tax13" jdbcType="DECIMAL" property="chksTax13"/>
+		<result column="chks_tax14" jdbcType="DECIMAL" property="chksTax14"/>
+		<result column="chks_tax15" jdbcType="DECIMAL" property="chksTax15"/>
+		<result column="chks_tax16" jdbcType="DECIMAL" property="chksTax16"/>
+		<result column="chks_tax17" jdbcType="DECIMAL" property="chksTax17"/>
+		<result column="chks_tax18" jdbcType="DECIMAL" property="chksTax18"/>
+		<result column="chks_tax19" jdbcType="DECIMAL" property="chksTax19"/>
+		<result column="chks_tax20" jdbcType="DECIMAL" property="chksTax20"/>
+		<result column="chks_tax21" jdbcType="DECIMAL" property="chksTax21"/>
+		<result column="chks_tax22" jdbcType="DECIMAL" property="chksTax22"/>
+		<result column="chks_tax23" jdbcType="DECIMAL" property="chksTax23"/>
+		<result column="chks_tax24" jdbcType="DECIMAL" property="chksTax24"/>
+		<result column="chks_tax25" jdbcType="DECIMAL" property="chksTax25"/>
+		<result column="chks_incl_tax_ref1" jdbcType="DECIMAL" property="chksInclTaxRef1"/>
+		<result column="chks_incl_tax_ref2" jdbcType="DECIMAL" property="chksInclTaxRef2"/>
+		<result column="chks_incl_tax_ref3" jdbcType="DECIMAL" property="chksInclTaxRef3"/>
+		<result column="chks_incl_tax_ref4" jdbcType="DECIMAL" property="chksInclTaxRef4"/>
+		<result column="chks_pre_disc" jdbcType="DECIMAL" property="chksPreDisc"/>
+		<result column="chks_mid_disc" jdbcType="DECIMAL" property="chksMidDisc"/>
+		<result column="chks_post_disc" jdbcType="DECIMAL" property="chksPostDisc"/>
+		<result column="chks_gratuity_total" jdbcType="DECIMAL" property="chksGratuityTotal"/>
+		<result column="chks_round_amount" jdbcType="DECIMAL" property="chksRoundAmount"/>
+		<result column="chks_payment_total" jdbcType="DECIMAL" property="chksPaymentTotal"/>
+		<result column="chks_tips_total" jdbcType="DECIMAL" property="chksTipsTotal"/>
+		<result column="chks_surcharge_total" jdbcType="DECIMAL" property="chksSurchargeTotal"/>
+		<result column="chks_paid" jdbcType="CHAR" property="chksPaid"/>
+		<result column="chks_resv_book_date" jdbcType="DATE" property="chksResvBookDate"/>
+		<result column="chks_resv_refno_with_prefix" jdbcType="VARCHAR" property="chksResvRefnoWithPrefix"/>
+		<result column="chks_ordering_type" jdbcType="CHAR" property="chksOrderingType"/>
+		<result column="chks_ordering_mode" jdbcType="CHAR" property="chksOrderingMode"/>
+		<result column="chks_non_revenue" jdbcType="CHAR" property="chksNonRevenue"/>
+		<result column="chks_memb_id" jdbcType="INTEGER" property="chksMembId"/>
+		<result column="chks_ctyp_id" jdbcType="INTEGER" property="chksCtypId"/>
+		<result column="chks_settle_shift_num" jdbcType="INTEGER" property="chksSettleShiftNum"/>
+		<result column="chks_open_time" jdbcType="TIMESTAMP" property="chksOpenTime"/>
+		<result column="chks_open_loctime" jdbcType="TIMESTAMP" property="chksOpenLoctime"/>
+		<result column="chks_open_user_id" jdbcType="INTEGER" property="chksOpenUserId"/>
+		<result column="chks_open_stat_id" jdbcType="INTEGER" property="chksOpenStatId"/>
+		<result column="chks_close_time" jdbcType="TIMESTAMP" property="chksCloseTime"/>
+		<result column="chks_close_loctime" jdbcType="TIMESTAMP" property="chksCloseLoctime"/>
+		<result column="chks_close_user_id" jdbcType="INTEGER" property="chksCloseUserId"/>
+		<result column="chks_close_stat_id" jdbcType="INTEGER" property="chksCloseStatId"/>
+		<result column="chks_close_bper_id" jdbcType="CHAR" property="chksCloseBperId"/>
+		<result column="chks_modified_time" jdbcType="TIMESTAMP" property="chksModifiedTime"/>
+		<result column="chks_modified_loctime" jdbcType="TIMESTAMP" property="chksModifiedLoctime"/>
+		<result column="chks_modified_user_id" jdbcType="INTEGER" property="chksModifiedUserId"/>
+		<result column="chks_modified_stat_id" jdbcType="INTEGER" property="chksModifiedStatId"/>
+		<result column="chks_print_time" jdbcType="TIMESTAMP" property="chksPrintTime"/>
+		<result column="chks_print_loctime" jdbcType="TIMESTAMP" property="chksPrintLoctime"/>
+		<result column="chks_print_user_id" jdbcType="INTEGER" property="chksPrintUserId"/>
+		<result column="chks_print_stat_id" jdbcType="INTEGER" property="chksPrintStatId"/>
+		<result column="chks_lock_time" jdbcType="TIMESTAMP" property="chksLockTime"/>
+		<result column="chks_lock_loctime" jdbcType="TIMESTAMP" property="chksLockLoctime"/>
+		<result column="chks_lock_user_id" jdbcType="INTEGER" property="chksLockUserId"/>
+		<result column="chks_lock_stat_id" jdbcType="INTEGER" property="chksLockStatId"/>
+		<result column="chks_void_time" jdbcType="TIMESTAMP" property="chksVoidTime"/>
+		<result column="chks_void_loctime" jdbcType="TIMESTAMP" property="chksVoidLoctime"/>
+		<result column="chks_void_user_id" jdbcType="INTEGER" property="chksVoidUserId"/>
+		<result column="chks_void_stat_id" jdbcType="INTEGER" property="chksVoidStatId"/>
+		<result column="chks_void_vdrs_id" jdbcType="INTEGER" property="chksVoidVdrsId"/>
+		<result column="chks_owner_user_id" jdbcType="INTEGER" property="chksOwnerUserId"/>
+		<result column="chks_status" jdbcType="CHAR" property="chksStatus"/>
+		<result column="chks_slave_id" jdbcType="INTEGER" property="chksSlaveId"/>
+		<result column="chks_slave_created" jdbcType="TIMESTAMP" property="chksSlaveCreated"/>
+		<result column="chks_slave_modified" jdbcType="TIMESTAMP" property="chksSlaveModified"/>
+		<result column="chks_sync_id" jdbcType="INTEGER" property="chksSyncId"/>
+		<result column="created" jdbcType="TIMESTAMP" property="created"/>
+		<result column="modified" jdbcType="TIMESTAMP" property="modified"/>
+		<result column="chks_remark" jdbcType="LONGVARCHAR" property="chksRemark"/>
+	</resultMap>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from pos_checks
+		where chks_id = #{chksId,jdbcType=CHAR}
+	</delete>
+	<sql id="posChecksField">
+		chks_id, chks_bday_id, chks_bper_id, chks_shop_id, chks_olet_id, chks_sect_id,
+		chks_aif, chks_txn, chks_check_prefix, chks_check_num, chks_check_prefix_num, chks_gen_check_num_type,
+		chks_ctbl_id, chks_guests, chks_children, chks_print_count, chks_receipt_print_count,
+		chks_party_count, chks_check_total, chks_item_total, chks_sc1, chks_sc2, chks_sc3,
+		chks_sc4, chks_sc5, chks_tax1, chks_tax2, chks_tax3, chks_tax4, chks_tax5, chks_tax6,
+		chks_tax7, chks_tax8, chks_tax9, chks_tax10, chks_tax11, chks_tax12, chks_tax13,
+		chks_tax14, chks_tax15, chks_tax16, chks_tax17, chks_tax18, chks_tax19, chks_tax20,
+		chks_tax21, chks_tax22, chks_tax23, chks_tax24, chks_tax25, chks_incl_tax_ref1, chks_incl_tax_ref2,
+		chks_incl_tax_ref3, chks_incl_tax_ref4, chks_pre_disc, chks_mid_disc, chks_post_disc,
+		chks_gratuity_total, chks_round_amount, chks_payment_total, chks_tips_total, chks_surcharge_total,
+		chks_paid, chks_resv_book_date, chks_resv_refno_with_prefix, chks_ordering_type,
+		chks_ordering_mode, chks_non_revenue, chks_memb_id, chks_ctyp_id, chks_settle_shift_num,
+		chks_open_time, chks_open_loctime, chks_open_user_id, chks_open_stat_id, chks_close_time,
+		chks_close_loctime, chks_close_user_id, chks_close_stat_id, chks_close_bper_id, chks_modified_time,
+		chks_modified_loctime, chks_modified_user_id, chks_modified_stat_id, chks_print_time,
+		chks_print_loctime, chks_print_user_id, chks_print_stat_id, chks_lock_time, chks_lock_loctime,
+		chks_lock_user_id, chks_lock_stat_id, chks_void_time, chks_void_loctime, chks_void_user_id,
+		chks_void_stat_id, chks_void_vdrs_id, chks_owner_user_id, chks_status, chks_slave_id,
+		chks_slave_created, chks_slave_modified, chks_sync_id, created, modified, chks_remark
+	</sql>
+	<insert id="insert" parameterType="com.shiji.entity.PosChecks">
+		insert into pos_checks (<include refid="posChecksField"/>)
+		values (#{chksId,jdbcType=CHAR}, #{chksBdayId,jdbcType=CHAR}, #{chksBperId,jdbcType=CHAR},
+		#{chksShopId,jdbcType=INTEGER}, #{chksOletId,jdbcType=INTEGER}, #{chksSectId,jdbcType=INTEGER},
+		#{chksAif,jdbcType=INTEGER}, #{chksTxn,jdbcType=INTEGER}, #{chksCheckPrefix,jdbcType=VARCHAR},
+		#{chksCheckNum,jdbcType=INTEGER}, #{chksCheckPrefixNum,jdbcType=VARCHAR}, #{chksGenCheckNumType,jdbcType=CHAR},
+		#{chksCtblId,jdbcType=CHAR}, #{chksGuests,jdbcType=INTEGER}, #{chksChildren,jdbcType=INTEGER},
+		#{chksPrintCount,jdbcType=INTEGER}, #{chksReceiptPrintCount,jdbcType=INTEGER},
+		#{chksPartyCount,jdbcType=INTEGER}, #{chksCheckTotal,jdbcType=DECIMAL}, #{chksItemTotal,jdbcType=DECIMAL},
+		#{chksSc1,jdbcType=DECIMAL}, #{chksSc2,jdbcType=DECIMAL}, #{chksSc3,jdbcType=DECIMAL},
+		#{chksSc4,jdbcType=DECIMAL}, #{chksSc5,jdbcType=DECIMAL}, #{chksTax1,jdbcType=DECIMAL},
+		#{chksTax2,jdbcType=DECIMAL}, #{chksTax3,jdbcType=DECIMAL}, #{chksTax4,jdbcType=DECIMAL},
+		#{chksTax5,jdbcType=DECIMAL}, #{chksTax6,jdbcType=DECIMAL}, #{chksTax7,jdbcType=DECIMAL},
+		#{chksTax8,jdbcType=DECIMAL}, #{chksTax9,jdbcType=DECIMAL}, #{chksTax10,jdbcType=DECIMAL},
+		#{chksTax11,jdbcType=DECIMAL}, #{chksTax12,jdbcType=DECIMAL}, #{chksTax13,jdbcType=DECIMAL},
+		#{chksTax14,jdbcType=DECIMAL}, #{chksTax15,jdbcType=DECIMAL}, #{chksTax16,jdbcType=DECIMAL},
+		#{chksTax17,jdbcType=DECIMAL}, #{chksTax18,jdbcType=DECIMAL}, #{chksTax19,jdbcType=DECIMAL},
+		#{chksTax20,jdbcType=DECIMAL}, #{chksTax21,jdbcType=DECIMAL}, #{chksTax22,jdbcType=DECIMAL},
+		#{chksTax23,jdbcType=DECIMAL}, #{chksTax24,jdbcType=DECIMAL}, #{chksTax25,jdbcType=DECIMAL},
+		#{chksInclTaxRef1,jdbcType=DECIMAL}, #{chksInclTaxRef2,jdbcType=DECIMAL}, #{chksInclTaxRef3,jdbcType=DECIMAL},
+		#{chksInclTaxRef4,jdbcType=DECIMAL}, #{chksPreDisc,jdbcType=DECIMAL}, #{chksMidDisc,jdbcType=DECIMAL},
+		#{chksPostDisc,jdbcType=DECIMAL}, #{chksGratuityTotal,jdbcType=DECIMAL}, #{chksRoundAmount,jdbcType=DECIMAL},
+		#{chksPaymentTotal,jdbcType=DECIMAL}, #{chksTipsTotal,jdbcType=DECIMAL}, #{chksSurchargeTotal,jdbcType=DECIMAL},
+		#{chksPaid,jdbcType=CHAR}, #{chksResvBookDate,jdbcType=DATE}, #{chksResvRefnoWithPrefix,jdbcType=VARCHAR},
+		#{chksOrderingType,jdbcType=CHAR}, #{chksOrderingMode,jdbcType=CHAR}, #{chksNonRevenue,jdbcType=CHAR},
+		#{chksMembId,jdbcType=INTEGER}, #{chksCtypId,jdbcType=INTEGER}, #{chksSettleShiftNum,jdbcType=INTEGER},
+		#{chksOpenTime,jdbcType=TIMESTAMP}, #{chksOpenLoctime,jdbcType=TIMESTAMP}, #{chksOpenUserId,jdbcType=INTEGER},
+		#{chksOpenStatId,jdbcType=INTEGER}, #{chksCloseTime,jdbcType=TIMESTAMP}, #{chksCloseLoctime,jdbcType=TIMESTAMP},
+		#{chksCloseUserId,jdbcType=INTEGER}, #{chksCloseStatId,jdbcType=INTEGER}, #{chksCloseBperId,jdbcType=CHAR},
+		#{chksModifiedTime,jdbcType=TIMESTAMP}, #{chksModifiedLoctime,jdbcType=TIMESTAMP},
+		#{chksModifiedUserId,jdbcType=INTEGER}, #{chksModifiedStatId,jdbcType=INTEGER},
+		#{chksPrintTime,jdbcType=TIMESTAMP}, #{chksPrintLoctime,jdbcType=TIMESTAMP},
+		#{chksPrintUserId,jdbcType=INTEGER},
+		#{chksPrintStatId,jdbcType=INTEGER}, #{chksLockTime,jdbcType=TIMESTAMP}, #{chksLockLoctime,jdbcType=TIMESTAMP},
+		#{chksLockUserId,jdbcType=INTEGER}, #{chksLockStatId,jdbcType=INTEGER}, #{chksVoidTime,jdbcType=TIMESTAMP},
+		#{chksVoidLoctime,jdbcType=TIMESTAMP}, #{chksVoidUserId,jdbcType=INTEGER}, #{chksVoidStatId,jdbcType=INTEGER},
+		#{chksVoidVdrsId,jdbcType=INTEGER}, #{chksOwnerUserId,jdbcType=INTEGER}, #{chksStatus,jdbcType=CHAR},
+		#{chksSlaveId,jdbcType=INTEGER}, #{chksSlaveCreated,jdbcType=TIMESTAMP},
+		#{chksSlaveModified,jdbcType=TIMESTAMP},
+		#{chksSyncId,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, #{modified,jdbcType=TIMESTAMP},
+		#{chksRemark,jdbcType=LONGVARCHAR})
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="com.shiji.entity.PosChecks">
+		update pos_checks
+		set chks_bday_id = #{chksBdayId,jdbcType=CHAR},
+		chks_bper_id = #{chksBperId,jdbcType=CHAR},
+		chks_shop_id = #{chksShopId,jdbcType=INTEGER},
+		chks_olet_id = #{chksOletId,jdbcType=INTEGER},
+		chks_sect_id = #{chksSectId,jdbcType=INTEGER},
+		chks_aif = #{chksAif,jdbcType=INTEGER},
+		chks_txn = #{chksTxn,jdbcType=INTEGER},
+		chks_check_prefix = #{chksCheckPrefix,jdbcType=VARCHAR},
+		chks_check_num = #{chksCheckNum,jdbcType=INTEGER},
+		chks_check_prefix_num = #{chksCheckPrefixNum,jdbcType=VARCHAR},
+		chks_gen_check_num_type = #{chksGenCheckNumType,jdbcType=CHAR},
+		chks_ctbl_id = #{chksCtblId,jdbcType=CHAR},
+		chks_guests = #{chksGuests,jdbcType=INTEGER},
+		chks_children = #{chksChildren,jdbcType=INTEGER},
+		chks_print_count = #{chksPrintCount,jdbcType=INTEGER},
+		chks_receipt_print_count = #{chksReceiptPrintCount,jdbcType=INTEGER},
+		chks_party_count = #{chksPartyCount,jdbcType=INTEGER},
+		chks_check_total = #{chksCheckTotal,jdbcType=DECIMAL},
+		chks_item_total = #{chksItemTotal,jdbcType=DECIMAL},
+		chks_sc1 = #{chksSc1,jdbcType=DECIMAL},
+		chks_sc2 = #{chksSc2,jdbcType=DECIMAL},
+		chks_sc3 = #{chksSc3,jdbcType=DECIMAL},
+		chks_sc4 = #{chksSc4,jdbcType=DECIMAL},
+		chks_sc5 = #{chksSc5,jdbcType=DECIMAL},
+		chks_tax1 = #{chksTax1,jdbcType=DECIMAL},
+		chks_tax2 = #{chksTax2,jdbcType=DECIMAL},
+		chks_tax3 = #{chksTax3,jdbcType=DECIMAL},
+		chks_tax4 = #{chksTax4,jdbcType=DECIMAL},
+		chks_tax5 = #{chksTax5,jdbcType=DECIMAL},
+		chks_tax6 = #{chksTax6,jdbcType=DECIMAL},
+		chks_tax7 = #{chksTax7,jdbcType=DECIMAL},
+		chks_tax8 = #{chksTax8,jdbcType=DECIMAL},
+		chks_tax9 = #{chksTax9,jdbcType=DECIMAL},
+		chks_tax10 = #{chksTax10,jdbcType=DECIMAL},
+		chks_tax11 = #{chksTax11,jdbcType=DECIMAL},
+		chks_tax12 = #{chksTax12,jdbcType=DECIMAL},
+		chks_tax13 = #{chksTax13,jdbcType=DECIMAL},
+		chks_tax14 = #{chksTax14,jdbcType=DECIMAL},
+		chks_tax15 = #{chksTax15,jdbcType=DECIMAL},
+		chks_tax16 = #{chksTax16,jdbcType=DECIMAL},
+		chks_tax17 = #{chksTax17,jdbcType=DECIMAL},
+		chks_tax18 = #{chksTax18,jdbcType=DECIMAL},
+		chks_tax19 = #{chksTax19,jdbcType=DECIMAL},
+		chks_tax20 = #{chksTax20,jdbcType=DECIMAL},
+		chks_tax21 = #{chksTax21,jdbcType=DECIMAL},
+		chks_tax22 = #{chksTax22,jdbcType=DECIMAL},
+		chks_tax23 = #{chksTax23,jdbcType=DECIMAL},
+		chks_tax24 = #{chksTax24,jdbcType=DECIMAL},
+		chks_tax25 = #{chksTax25,jdbcType=DECIMAL},
+		chks_incl_tax_ref1 = #{chksInclTaxRef1,jdbcType=DECIMAL},
+		chks_incl_tax_ref2 = #{chksInclTaxRef2,jdbcType=DECIMAL},
+		chks_incl_tax_ref3 = #{chksInclTaxRef3,jdbcType=DECIMAL},
+		chks_incl_tax_ref4 = #{chksInclTaxRef4,jdbcType=DECIMAL},
+		chks_pre_disc = #{chksPreDisc,jdbcType=DECIMAL},
+		chks_mid_disc = #{chksMidDisc,jdbcType=DECIMAL},
+		chks_post_disc = #{chksPostDisc,jdbcType=DECIMAL},
+		chks_gratuity_total = #{chksGratuityTotal,jdbcType=DECIMAL},
+		chks_round_amount = #{chksRoundAmount,jdbcType=DECIMAL},
+		chks_payment_total = #{chksPaymentTotal,jdbcType=DECIMAL},
+		chks_tips_total = #{chksTipsTotal,jdbcType=DECIMAL},
+		chks_surcharge_total = #{chksSurchargeTotal,jdbcType=DECIMAL},
+		chks_paid = #{chksPaid,jdbcType=CHAR},
+		chks_resv_book_date = #{chksResvBookDate,jdbcType=DATE},
+		chks_resv_refno_with_prefix = #{chksResvRefnoWithPrefix,jdbcType=VARCHAR},
+		chks_ordering_type = #{chksOrderingType,jdbcType=CHAR},
+		chks_ordering_mode = #{chksOrderingMode,jdbcType=CHAR},
+		chks_non_revenue = #{chksNonRevenue,jdbcType=CHAR},
+		chks_memb_id = #{chksMembId,jdbcType=INTEGER},
+		chks_ctyp_id = #{chksCtypId,jdbcType=INTEGER},
+		chks_settle_shift_num = #{chksSettleShiftNum,jdbcType=INTEGER},
+		chks_open_time = #{chksOpenTime,jdbcType=TIMESTAMP},
+		chks_open_loctime = #{chksOpenLoctime,jdbcType=TIMESTAMP},
+		chks_open_user_id = #{chksOpenUserId,jdbcType=INTEGER},
+		chks_open_stat_id = #{chksOpenStatId,jdbcType=INTEGER},
+		chks_close_time = #{chksCloseTime,jdbcType=TIMESTAMP},
+		chks_close_loctime = #{chksCloseLoctime,jdbcType=TIMESTAMP},
+		chks_close_user_id = #{chksCloseUserId,jdbcType=INTEGER},
+		chks_close_stat_id = #{chksCloseStatId,jdbcType=INTEGER},
+		chks_close_bper_id = #{chksCloseBperId,jdbcType=CHAR},
+		chks_modified_time = #{chksModifiedTime,jdbcType=TIMESTAMP},
+		chks_modified_loctime = #{chksModifiedLoctime,jdbcType=TIMESTAMP},
+		chks_modified_user_id = #{chksModifiedUserId,jdbcType=INTEGER},
+		chks_modified_stat_id = #{chksModifiedStatId,jdbcType=INTEGER},
+		chks_print_time = #{chksPrintTime,jdbcType=TIMESTAMP},
+		chks_print_loctime = #{chksPrintLoctime,jdbcType=TIMESTAMP},
+		chks_print_user_id = #{chksPrintUserId,jdbcType=INTEGER},
+		chks_print_stat_id = #{chksPrintStatId,jdbcType=INTEGER},
+		chks_lock_time = #{chksLockTime,jdbcType=TIMESTAMP},
+		chks_lock_loctime = #{chksLockLoctime,jdbcType=TIMESTAMP},
+		chks_lock_user_id = #{chksLockUserId,jdbcType=INTEGER},
+		chks_lock_stat_id = #{chksLockStatId,jdbcType=INTEGER},
+		chks_void_time = #{chksVoidTime,jdbcType=TIMESTAMP},
+		chks_void_loctime = #{chksVoidLoctime,jdbcType=TIMESTAMP},
+		chks_void_user_id = #{chksVoidUserId,jdbcType=INTEGER},
+		chks_void_stat_id = #{chksVoidStatId,jdbcType=INTEGER},
+		chks_void_vdrs_id = #{chksVoidVdrsId,jdbcType=INTEGER},
+		chks_owner_user_id = #{chksOwnerUserId,jdbcType=INTEGER},
+		chks_status = #{chksStatus,jdbcType=CHAR},
+		chks_slave_id = #{chksSlaveId,jdbcType=INTEGER},
+		chks_slave_created = #{chksSlaveCreated,jdbcType=TIMESTAMP},
+		chks_slave_modified = #{chksSlaveModified,jdbcType=TIMESTAMP},
+		chks_sync_id = #{chksSyncId,jdbcType=INTEGER},
+		created = #{created,jdbcType=TIMESTAMP},
+		modified = #{modified,jdbcType=TIMESTAMP},
+		chks_remark = #{chksRemark,jdbcType=LONGVARCHAR}
+		where chks_id = #{chksId,jdbcType=CHAR}
+	</update>
+	<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select
+		<include refid="posChecksField"/>
+		from pos_checks
+		where chks_id = #{chksId,jdbcType=CHAR}
+	</select>
+	<select id="selectAll" resultType="java.util.Map">
+		select
+		<include refid="posChecksField"/>
+		from pos_checks
+	</select>
+	<select id="findPosChecksByCheckNumAndOutletIdAndBdayId" resultType="java.util.Map">
+		select
+		<include refid="posChecksField"/>
+		from pos_checks where 1=1
+		<if test="checkNum!=null">
+			and chks_check_prefix_num = #{checkNum}
+		</if>
+		<if test="outletId!=null">
+			and chks_olet_id =#{outletId}
+		</if>
+		<if test="sDayId!=null">
+			and chks_bday_id =#{sDayId}
+		</if>
+		<if test="stypeTime ==1">
+			<if test="dbeginTime!=null">
+				and chks_open_time &lt;= #{dendTime} and chks_open_time &gt;=#{dbeginTime}
+			</if>
+		</if>
+		<if test="stypeTime ==2">
+			<if test="dbeginTime!=null">
+				and chks_close_time &lt;= #{dendTime} and chks_close_time &gt;=#{dbeginTime}
+			</if>
+		</if>
+	</select>
+
+	<select id="findAllByBusinessDayIdAndTimeRang" resultType="com.shiji.entity.PosCheckVo">
+		SELECT
+		poc.chks_id as chksId,
+		oo.olet_name_l1 as outlet ,
+		pbd.bday_date as date,
+		chks_check_prefix_num as checkNo,
+		pct.ctbl_table as tableNo,
+		pct.ctbl_table_ext as tableExt,
+		poc.chks_item_total as checkItemTotal,
+		poc.chks_check_total as checkTotal,
+		pop.cpay_name_l1 as paymentType,
+		pop.cpay_pay_total as amount,
+		pop.cpay_pay_tips as tips,
+		poc.chks_pre_disc+poc.chks_post_disc+poc.chks_mid_disc as checkDiscountTotal
+		FROM
+		pos_checks poc
+		LEFT JOIN pos_check_payments pop ON poc.chks_id = pop.cpay_chks_id
+		LEFT JOIN pos_business_days pbd ON poc.chks_bday_id = pbd.bday_id
+		LEFT JOIN pos_check_tables pct ON poc.chks_id = pct.ctbl_chks_id
+		LEFT JOIN hero_outlet.out_outlets oo on poc.chks_olet_id = oo.olet_id
+		WHERE
+		poc.chks_check_total != ( SELECT sum( pop1.cpay_pay_total ) FROM pos_check_payments pop1 WHERE poc.chks_id =
+		pop1.cpay_chks_id )
+		<if test="typeTime==2">
+			<if test="checkBeginTime!=null">
+				and chks_close_time &lt;= #{checkEndTime} and chks_close_time &gt;=#{checkBeginTime}
+			</if>
+		</if>
+		<if test="typeTime ==1">
+			<if test="checkBeginTime!=null">
+				and chks_open_time &lt;= #{checkEndTime} and chks_open_time &gt;=#{checkBeginTime}
+			</if>
+		</if>
+		<if test="businessDayBeginDate!=null">
+			and pbd.bday_date &lt;= #{businessDayEndDate} and pbd.bday_date &gt;=#{businessDayBeginDate}
+		</if>
+	</select>
+
+	<select id="findAllByBusinessDayIdAndTimeRang1" resultType="com.shiji.entity.PosCheckVo">
+		SELECT
+		poc.chks_id as chksId,
+		oo.olet_name_l1 as outlet ,
+		pbd.bday_date as date,
+		chks_check_prefix_num as checkNo,
+		pct.ctbl_table as tableNo,
+		pct.ctbl_table_ext as tableExt,
+		poc.chks_item_total as checkItemTotal,
+		poc.chks_check_total as checkTotal,
+		pop.cpay_name_l1 as paymentType,
+		pop.cpay_pay_total as amount,
+		pop.cpay_pay_tips as tips,
+		poc.chks_pre_disc+poc.chks_post_disc+poc.chks_mid_disc as checkDiscountTotal
+		FROM
+		pos_checks poc
+		LEFT JOIN pos_check_payments pop ON poc.chks_id = pop.cpay_chks_id
+		LEFT JOIN pos_business_days pbd ON poc.chks_bday_id = pbd.bday_id
+		LEFT JOIN pos_check_tables pct ON poc.chks_id = pct.ctbl_chks_id
+		LEFT JOIN hero_outlet.out_outlets oo on poc.chks_olet_id = oo.olet_id
+		LEFT JOIN pos_check_items pci ON pci.citm_chks_id = poc.chks_id
+		WHERE
+		poc.chks_item_total != (select sum(pci1.citm_round_total) from pos_check_items pci1 where poc.chks_id = pci1.citm_chks_id)
+		<if test="typeTime==2">
+			<if test="checkBeginTime!=null">
+				and chks_close_time &lt;= #{checkEndTime} and chks_close_time &gt;=#{checkBeginTime}
+			</if>
+		</if>
+		<if test="typeTime ==1">
+			<if test="checkBeginTime!=null">
+				and chks_open_time &lt;= #{checkEndTime} and chks_open_time &gt;=#{checkBeginTime}
+			</if>
+		</if>
+		<if test="businessDayBeginDate!=null">
+			and pbd.bday_date &lt;= #{businessDayEndDate} and pbd.bday_date &gt;=#{businessDayBeginDate}
+		</if> group by pop.cpay_id
+	</select>
+
+	<select id="findAllByBusinessDayIdAndTimeRang2" resultType="com.shiji.entity.PosCheckVo">
+		SELECT
+		poc.chks_id as chksId,
+		oo.olet_name_l1 as outlet ,
+		pbd.bday_date as date,
+		chks_check_prefix_num as checkNo,
+		pct.ctbl_table as tableNo,
+		pct.ctbl_table_ext as tableExt,
+		poc.chks_item_total as checkItemTotal,
+		poc.chks_check_total as checkTotal,
+		pop.cpay_name_l1 as paymentType,
+		pop.cpay_pay_total as amount,
+		pop.cpay_pay_tips as tips,
+		poc.chks_pre_disc+poc.chks_post_disc+poc.chks_mid_disc as checkDiscountTotal
+		FROM
+		pos_checks poc
+		LEFT JOIN pos_check_payments pop ON poc.chks_id = pop.cpay_chks_id
+		LEFT JOIN pos_business_days pbd ON poc.chks_bday_id = pbd.bday_id
+		LEFT JOIN pos_check_tables pct ON poc.chks_id = pct.ctbl_chks_id
+		LEFT JOIN hero_outlet.out_outlets oo on poc.chks_olet_id = oo.olet_id
+		LEFT JOIN pos_check_discounts pcd ON pcd.cdis_chks_id = poc.chks_id
+		WHERE
+		poc.chks_pre_disc+poc.chks_post_disc+poc.chks_mid_disc != (select sum(pcd1.cdis_round_total) from pos_check_discounts pcd1 where poc.chks_id = pcd1.cdis_chks_id)
+		<if test="typeTime==2">
+			<if test="checkBeginTime!=null">
+				and chks_close_time &lt;= #{checkEndTime} and chks_close_time &gt;=#{checkBeginTime}
+			</if>
+		</if>
+		<if test="typeTime ==1">
+			<if test="checkBeginTime!=null">
+				and chks_open_time &lt;= #{checkEndTime} and chks_open_time &gt;=#{checkBeginTime}
+			</if>
+		</if>
+		<if test="businessDayBeginDate!=null">
+			and pbd.bday_date &lt;= #{businessDayEndDate} and pbd.bday_date &gt;=#{businessDayBeginDate}
+		</if> group by pop.cpay_id
+	</select>
+
+</mapper>

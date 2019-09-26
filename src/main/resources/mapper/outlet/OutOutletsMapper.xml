@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shiji.mapper.outlet.OutOutletsMapper">
+    <resultMap id="BaseResultMap" type="com.shiji.entity.OutOutlets">
+        <id column="olet_id" jdbcType="INTEGER" property="oletId"/>
+        <result column="olet_shop_id" jdbcType="INTEGER" property="oletShopId"/>
+        <result column="olet_code" jdbcType="VARCHAR" property="oletCode"/>
+        <result column="olet_name_l1" jdbcType="VARCHAR" property="oletNameL1"/>
+        <result column="olet_name_l2" jdbcType="VARCHAR" property="oletNameL2"/>
+        <result column="olet_name_l3" jdbcType="VARCHAR" property="oletNameL3"/>
+        <result column="olet_name_l4" jdbcType="VARCHAR" property="oletNameL4"/>
+        <result column="olet_name_l5" jdbcType="VARCHAR" property="oletNameL5"/>
+        <result column="olet_short_name_l1" jdbcType="VARCHAR" property="oletShortNameL1"/>
+        <result column="olet_short_name_l2" jdbcType="VARCHAR" property="oletShortNameL2"/>
+        <result column="olet_short_name_l3" jdbcType="VARCHAR" property="oletShortNameL3"/>
+        <result column="olet_short_name_l4" jdbcType="VARCHAR" property="oletShortNameL4"/>
+        <result column="olet_short_name_l5" jdbcType="VARCHAR" property="oletShortNameL5"/>
+        <result column="olet_seq" jdbcType="INTEGER" property="oletSeq"/>
+        <result column="olet_phone" jdbcType="VARCHAR" property="oletPhone"/>
+        <result column="olet_fax" jdbcType="VARCHAR" property="oletFax"/>
+        <result column="olet_website" jdbcType="VARCHAR" property="oletWebsite"/>
+        <result column="olet_bran_id" jdbcType="INTEGER" property="oletBranId"/>
+        <result column="olet_loca_id" jdbcType="INTEGER" property="oletLocaId"/>
+        <result column="olet_currency_sign" jdbcType="VARCHAR" property="oletCurrencySign"/>
+        <result column="olet_currency_code" jdbcType="VARCHAR" property="oletCurrencyCode"/>
+        <result column="olet_date_format" jdbcType="INTEGER" property="oletDateFormat"/>
+        <result column="olet_phone_area_code" jdbcType="VARCHAR" property="oletPhoneAreaCode"/>
+        <result column="olet_status" jdbcType="CHAR" property="oletStatus"/>
+        <result column="created" jdbcType="TIMESTAMP" property="created"/>
+        <result column="modified" jdbcType="TIMESTAMP" property="modified"/>
+        <result column="olet_addr_l1" jdbcType="LONGVARCHAR" property="oletAddrL1"/>
+        <result column="olet_addr_l2" jdbcType="LONGVARCHAR" property="oletAddrL2"/>
+        <result column="olet_addr_l3" jdbcType="LONGVARCHAR" property="oletAddrL3"/>
+        <result column="olet_addr_l4" jdbcType="LONGVARCHAR" property="oletAddrL4"/>
+        <result column="olet_addr_l5" jdbcType="LONGVARCHAR" property="oletAddrL5"/>
+        <result column="olet_info_l1" jdbcType="LONGVARCHAR" property="oletInfoL1"/>
+        <result column="olet_info_l2" jdbcType="LONGVARCHAR" property="oletInfoL2"/>
+        <result column="olet_info_l3" jdbcType="LONGVARCHAR" property="oletInfoL3"/>
+        <result column="olet_info_l4" jdbcType="LONGVARCHAR" property="oletInfoL4"/>
+        <result column="olet_info_l5" jdbcType="LONGVARCHAR" property="oletInfoL5"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from out_outlets
+        where olet_id = #{oletId,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.shiji.entity.OutOutlets">
+        insert into out_outlets (olet_id, olet_shop_id, olet_code,
+        olet_name_l1, olet_name_l2, olet_name_l3,
+        olet_name_l4, olet_name_l5, olet_short_name_l1,
+        olet_short_name_l2, olet_short_name_l3, olet_short_name_l4,
+        olet_short_name_l5, olet_seq, olet_phone,
+        olet_fax, olet_website, olet_bran_id,
+        olet_loca_id, olet_currency_sign, olet_currency_code,
+        olet_date_format, olet_phone_area_code, olet_status,
+        created, modified, olet_addr_l1,
+        olet_addr_l2, olet_addr_l3, olet_addr_l4,
+        olet_addr_l5, olet_info_l1, olet_info_l2,
+        olet_info_l3, olet_info_l4, olet_info_l5
+        )
+        values (#{oletId,jdbcType=INTEGER}, #{oletShopId,jdbcType=INTEGER}, #{oletCode,jdbcType=VARCHAR},
+        #{oletNameL1,jdbcType=VARCHAR}, #{oletNameL2,jdbcType=VARCHAR}, #{oletNameL3,jdbcType=VARCHAR},
+        #{oletNameL4,jdbcType=VARCHAR}, #{oletNameL5,jdbcType=VARCHAR}, #{oletShortNameL1,jdbcType=VARCHAR},
+        #{oletShortNameL2,jdbcType=VARCHAR}, #{oletShortNameL3,jdbcType=VARCHAR}, #{oletShortNameL4,jdbcType=VARCHAR},
+        #{oletShortNameL5,jdbcType=VARCHAR}, #{oletSeq,jdbcType=INTEGER}, #{oletPhone,jdbcType=VARCHAR},
+        #{oletFax,jdbcType=VARCHAR}, #{oletWebsite,jdbcType=VARCHAR}, #{oletBranId,jdbcType=INTEGER},
+        #{oletLocaId,jdbcType=INTEGER}, #{oletCurrencySign,jdbcType=VARCHAR}, #{oletCurrencyCode,jdbcType=VARCHAR},
+        #{oletDateFormat,jdbcType=INTEGER}, #{oletPhoneAreaCode,jdbcType=VARCHAR}, #{oletStatus,jdbcType=CHAR},
+        #{created,jdbcType=TIMESTAMP}, #{modified,jdbcType=TIMESTAMP}, #{oletAddrL1,jdbcType=LONGVARCHAR},
+        #{oletAddrL2,jdbcType=LONGVARCHAR}, #{oletAddrL3,jdbcType=LONGVARCHAR}, #{oletAddrL4,jdbcType=LONGVARCHAR},
+        #{oletAddrL5,jdbcType=LONGVARCHAR}, #{oletInfoL1,jdbcType=LONGVARCHAR}, #{oletInfoL2,jdbcType=LONGVARCHAR},
+        #{oletInfoL3,jdbcType=LONGVARCHAR}, #{oletInfoL4,jdbcType=LONGVARCHAR}, #{oletInfoL5,jdbcType=LONGVARCHAR}
+        )
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.shiji.entity.OutOutlets">
+        update out_outlets
+        set olet_shop_id = #{oletShopId,jdbcType=INTEGER},
+        olet_code = #{oletCode,jdbcType=VARCHAR},
+        olet_name_l1 = #{oletNameL1,jdbcType=VARCHAR},
+        olet_name_l2 = #{oletNameL2,jdbcType=VARCHAR},
+        olet_name_l3 = #{oletNameL3,jdbcType=VARCHAR},
+        olet_name_l4 = #{oletNameL4,jdbcType=VARCHAR},
+        olet_name_l5 = #{oletNameL5,jdbcType=VARCHAR},
+        olet_short_name_l1 = #{oletShortNameL1,jdbcType=VARCHAR},
+        olet_short_name_l2 = #{oletShortNameL2,jdbcType=VARCHAR},
+        olet_short_name_l3 = #{oletShortNameL3,jdbcType=VARCHAR},
+        olet_short_name_l4 = #{oletShortNameL4,jdbcType=VARCHAR},
+        olet_short_name_l5 = #{oletShortNameL5,jdbcType=VARCHAR},
+        olet_seq = #{oletSeq,jdbcType=INTEGER},
+        olet_phone = #{oletPhone,jdbcType=VARCHAR},
+        olet_fax = #{oletFax,jdbcType=VARCHAR},
+        olet_website = #{oletWebsite,jdbcType=VARCHAR},
+        olet_bran_id = #{oletBranId,jdbcType=INTEGER},
+        olet_loca_id = #{oletLocaId,jdbcType=INTEGER},
+        olet_currency_sign = #{oletCurrencySign,jdbcType=VARCHAR},
+        olet_currency_code = #{oletCurrencyCode,jdbcType=VARCHAR},
+        olet_date_format = #{oletDateFormat,jdbcType=INTEGER},
+        olet_phone_area_code = #{oletPhoneAreaCode,jdbcType=VARCHAR},
+        olet_status = #{oletStatus,jdbcType=CHAR},
+        created = #{created,jdbcType=TIMESTAMP},
+        modified = #{modified,jdbcType=TIMESTAMP},
+        olet_addr_l1 = #{oletAddrL1,jdbcType=LONGVARCHAR},
+        olet_addr_l2 = #{oletAddrL2,jdbcType=LONGVARCHAR},
+        olet_addr_l3 = #{oletAddrL3,jdbcType=LONGVARCHAR},
+        olet_addr_l4 = #{oletAddrL4,jdbcType=LONGVARCHAR},
+        olet_addr_l5 = #{oletAddrL5,jdbcType=LONGVARCHAR},
+        olet_info_l1 = #{oletInfoL1,jdbcType=LONGVARCHAR},
+        olet_info_l2 = #{oletInfoL2,jdbcType=LONGVARCHAR},
+        olet_info_l3 = #{oletInfoL3,jdbcType=LONGVARCHAR},
+        olet_info_l4 = #{oletInfoL4,jdbcType=LONGVARCHAR},
+        olet_info_l5 = #{oletInfoL5,jdbcType=LONGVARCHAR}
+        where olet_id = #{oletId,jdbcType=INTEGER}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select olet_id, olet_shop_id, olet_code, olet_name_l1, olet_name_l2, olet_name_l3,
+        olet_name_l4, olet_name_l5, olet_short_name_l1, olet_short_name_l2, olet_short_name_l3,
+        olet_short_name_l4, olet_short_name_l5, olet_seq, olet_phone, olet_fax, olet_website,
+        olet_bran_id, olet_loca_id, olet_currency_sign, olet_currency_code, olet_date_format,
+        olet_phone_area_code, olet_status, created, modified, olet_addr_l1, olet_addr_l2,
+        olet_addr_l3, olet_addr_l4, olet_addr_l5, olet_info_l1, olet_info_l2, olet_info_l3,
+        olet_info_l4, olet_info_l5
+        from out_outlets
+        where olet_id = #{oletId,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select olet_id, olet_shop_id, olet_code, olet_name_l1, olet_name_l2, olet_name_l3,
+        olet_name_l4, olet_name_l5, olet_short_name_l1, olet_short_name_l2, olet_short_name_l3,
+        olet_short_name_l4, olet_short_name_l5, olet_seq, olet_phone, olet_fax, olet_website,
+        olet_bran_id, olet_loca_id, olet_currency_sign, olet_currency_code, olet_date_format,
+        olet_phone_area_code, olet_status, created, modified, olet_addr_l1, olet_addr_l2,
+        olet_addr_l3, olet_addr_l4, olet_addr_l5, olet_info_l1, olet_info_l2, olet_info_l3,
+        olet_info_l4, olet_info_l5
+        from out_outlets
+    </select>
+    <select id="findByOutletId" resultType="java.lang.String">
+        select  olet_id from out_outlets where olet_code=#{outletCode}
+    </select>
+</mapper>

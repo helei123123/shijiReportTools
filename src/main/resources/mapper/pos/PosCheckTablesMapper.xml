@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shiji.mapper.pos.PosCheckTablesMapper">
+	<resultMap id="BaseResultMap" type="com.shiji.entity.PosCheckTables">
+		<id column="ctbl_id" jdbcType="CHAR" property="ctblId"/>
+		<result column="ctbl_olet_id" jdbcType="INTEGER" property="ctblOletId"/>
+		<result column="ctbl_chks_id" jdbcType="CHAR" property="ctblChksId"/>
+		<result column="ctbl_table" jdbcType="INTEGER" property="ctblTable"/>
+		<result column="ctbl_table_ext" jdbcType="VARCHAR" property="ctblTableExt"/>
+		<result column="ctbl_table_size" jdbcType="INTEGER" property="ctblTableSize"/>
+		<result column="ctbl_additional" jdbcType="CHAR" property="ctblAdditional"/>
+		<result column="ctbl_ptbl_id" jdbcType="INTEGER" property="ctblPtblId"/>
+		<result column="ctbl_status" jdbcType="CHAR" property="ctblStatus"/>
+		<result column="ctbl_slave_id" jdbcType="INTEGER" property="ctblSlaveId"/>
+		<result column="ctbl_slave_created" jdbcType="TIMESTAMP" property="ctblSlaveCreated"/>
+		<result column="ctbl_slave_modified" jdbcType="TIMESTAMP" property="ctblSlaveModified"/>
+		<result column="ctbl_sync_id" jdbcType="INTEGER" property="ctblSyncId"/>
+		<result column="created" jdbcType="TIMESTAMP" property="created"/>
+		<result column="modified" jdbcType="TIMESTAMP" property="modified"/>
+	</resultMap>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from pos_check_tables
+		where ctbl_id = #{ctblId,jdbcType=CHAR}
+	</delete>
+	<insert id="insert" parameterType="com.shiji.entity.PosCheckTables">
+		insert into pos_check_tables (ctbl_id, ctbl_olet_id, ctbl_chks_id,
+		ctbl_table, ctbl_table_ext, ctbl_table_size,
+		ctbl_additional, ctbl_ptbl_id, ctbl_status,
+		ctbl_slave_id, ctbl_slave_created, ctbl_slave_modified,
+		ctbl_sync_id, created, modified
+		)
+		values (#{ctblId,jdbcType=CHAR}, #{ctblOletId,jdbcType=INTEGER}, #{ctblChksId,jdbcType=CHAR},
+		#{ctblTable,jdbcType=INTEGER}, #{ctblTableExt,jdbcType=VARCHAR}, #{ctblTableSize,jdbcType=INTEGER},
+		#{ctblAdditional,jdbcType=CHAR}, #{ctblPtblId,jdbcType=INTEGER}, #{ctblStatus,jdbcType=CHAR},
+		#{ctblSlaveId,jdbcType=INTEGER}, #{ctblSlaveCreated,jdbcType=TIMESTAMP},
+		#{ctblSlaveModified,jdbcType=TIMESTAMP},
+		#{ctblSyncId,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP}, #{modified,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="com.shiji.entity.PosCheckTables">
+		update pos_check_tables
+		set ctbl_olet_id = #{ctblOletId,jdbcType=INTEGER},
+		ctbl_chks_id = #{ctblChksId,jdbcType=CHAR},
+		ctbl_table = #{ctblTable,jdbcType=INTEGER},
+		ctbl_table_ext = #{ctblTableExt,jdbcType=VARCHAR},
+		ctbl_table_size = #{ctblTableSize,jdbcType=INTEGER},
+		ctbl_additional = #{ctblAdditional,jdbcType=CHAR},
+		ctbl_ptbl_id = #{ctblPtblId,jdbcType=INTEGER},
+		ctbl_status = #{ctblStatus,jdbcType=CHAR},
+		ctbl_slave_id = #{ctblSlaveId,jdbcType=INTEGER},
+		ctbl_slave_created = #{ctblSlaveCreated,jdbcType=TIMESTAMP},
+		ctbl_slave_modified = #{ctblSlaveModified,jdbcType=TIMESTAMP},
+		ctbl_sync_id = #{ctblSyncId,jdbcType=INTEGER},
+		created = #{created,jdbcType=TIMESTAMP},
+		modified = #{modified,jdbcType=TIMESTAMP}
+		where ctbl_id = #{ctblId,jdbcType=CHAR}
+	</update>
+	<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select ctbl_id, ctbl_olet_id, ctbl_chks_id, ctbl_table, ctbl_table_ext, ctbl_table_size,
+		ctbl_additional, ctbl_ptbl_id, ctbl_status, ctbl_slave_id, ctbl_slave_created, ctbl_slave_modified,
+		ctbl_sync_id, created, modified
+		from pos_check_tables
+		where ctbl_id = #{ctblId,jdbcType=CHAR}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select ctbl_id, ctbl_olet_id, ctbl_chks_id, ctbl_table, ctbl_table_ext, ctbl_table_size,
+		ctbl_additional, ctbl_ptbl_id, ctbl_status, ctbl_slave_id, ctbl_slave_created, ctbl_slave_modified,
+		ctbl_sync_id, created, modified
+		from pos_check_tables
+	</select>
+</mapper>
