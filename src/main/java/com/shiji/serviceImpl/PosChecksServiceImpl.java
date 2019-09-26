@@ -290,7 +290,7 @@ public class PosChecksServiceImpl implements PosChecksServices {
 			obi[3] = resultsAll.get(i).getTableNo() + resultsAll.get(i).getTableExt();
 			obi[4] = resultsAll.get(i).getCheckItemTotal();
 			obi[5] = resultsAll.get(i).getItemTotal() + "(" + (resultsAll.get(i).getCheckItemTotal() - resultsAll.get(i).getItemTotal()) + ")";
-			obi[6] = resultsAll.get(i).getPaymentPayTotal() + "(" + (resultsAll.get(i).getCheckTotal() - resultsAll.get(i).getPaymentPayTotal()) + ")";
+			obi[6] = resultsAll.get(i).getCheckTotal() + "(" + (resultsAll.get(i).getCheckTotal() - resultsAll.get(i).getPaymentPayTotal()) + ")";
 			obi[7] = resultsAll.get(i).getDiscountTotal() + "(" + (resultsAll.get(i).getCheckDiscountTotal() - resultsAll.get(i).getDiscountTotal()) + ")";
 			obi[8] = resultsAll.get(i).getCheckItemDiscountTotal() + "(" + (resultsAll.get(i).getCheckItemDiscountTotal() - resultsAll.get(i).getCheckDiscountItemTotal()) + ")";
 			obi[9] = resultsAll.get(i).getPaymentType();
