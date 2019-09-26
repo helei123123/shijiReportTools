@@ -139,7 +139,7 @@
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
-				<!--如果需要打成jar包运行进入外部配置文件则取消注释进行打包将application.yml放在jar包同级目录下的config文件夹下。-->
+				<!--如果需要打成jar包运行进入外部配置文件则取消注释进行打包将application.yml放在jar包同级目录下的config文件夹下，用工具运行时请注释。-->
 				<!--
 				<excludes>
 					<exclude>*.yml</exclude>
