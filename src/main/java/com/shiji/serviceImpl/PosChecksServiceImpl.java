@@ -6,6 +6,7 @@ import com.shiji.service.*;
 import com.shiji.util.EnCapsulateQueryDate;
 import com.shiji.util.ExportExcel;
 import com.shiji.util.ResultFormat;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,7 @@ import java.util.*;
  * @modified By：
  * @version: v1.0$
  */
+@Slf4j
 @Service
 public class PosChecksServiceImpl implements PosChecksServices {
 
@@ -73,8 +75,9 @@ public class PosChecksServiceImpl implements PosChecksServices {
 		if (!StringUtils.isEmpty(businessDay)) {
 			Date parse = ymd.parse(businessDay);
 			sDayId = posBusinessDaysServices.findByDayId(parse);
-			if (sDayId == null || sDayId == "")
+			if (sDayId == null || sDayId == "") {
 				return ResultFormat.build(1, null);
+			}
 		}
 		if (!StringUtils.isEmpty(rangTime)) {
 			StringBuilder sbBeginTime = new StringBuilder();
@@ -173,8 +176,9 @@ public class PosChecksServiceImpl implements PosChecksServices {
 		List<String> sDayIds = posBusinessDaysServices.findByDayId(businessDayBeginDate, businessDayEndDate);
 		Date CheckBeginTime = null;
 		Date CheckEndTime = null;
-		if (sDayIds == null || sDayIds.size() == 0)
+		if (sDayIds == null || sDayIds.size() == 0) {
 			return new ResultFormat(1, "当前的营业日不存在!", null);
+		}
 		if (!StringUtils.isEmpty(rangTime)) {
 			CheckBeginTime = sdf1.parse(businessDayBeginDate.toString() + " " + rangTime.split("-")[0]);
 			CheckEndTime = sdf1.parse(businessDayBeginDate.toString() + " " + rangTime.split("-")[1]);

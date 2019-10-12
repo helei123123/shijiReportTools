@@ -2,12 +2,11 @@ package com.shiji.controller;
 
 import com.shiji.service.PosChecksServices;
 import com.shiji.util.ResultFormat;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,6 +19,7 @@ import java.text.ParseException;
  * @modified By：
  * @version: v1.0$
  */
+@Slf4j
 @Controller
 @RequestMapping("/export")
 public class PosChecksController {
@@ -69,7 +69,7 @@ public class PosChecksController {
 			resultFormat = new ResultFormat(3, null, null);
 			e.printStackTrace();
 		} catch (ParseException e) {
-			e.printStackTrace();
+			e.printStackTrace(); 
 			resultFormat = new ResultFormat(5, null, null);
 		} catch (IOException e) {
 			e.printStackTrace();

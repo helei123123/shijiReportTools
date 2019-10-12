@@ -6,12 +6,12 @@ spring:
   datasource:
     pos:
       driver-class-name: com.mysql.jdbc.Driver
-      jdbc-url: jdbc:mysql://127.0.0.1/hero_pos?characterEncoding=utf-8
+      jdbc-url: jdbc:mysql://127.0.0.1/hero_pos?characterEncoding=utf-8&autoReconnect=true&useSSL=false
       username: heroadmin
       password: infrasys
     outlet:
       driver-class-name: com.mysql.jdbc.Driver
-      jdbc-url: jdbc:mysql://127.0.0.1/hero_outlet?characterEncoding=utf-8
+      jdbc-url: jdbc:mysql://127.0.0.1/hero_outlet?characterEncoding=utf-8&autoReconnect=true&useSSL=false
       username: heroadmin
       password: infrasys
   jpa:
@@ -27,9 +27,9 @@ mybatis:
   typeAliasesPackage: com.shiji.entity
   configuration:
     map-underscore-to-camel-case: true
-#显示sql语句
-logging:
-  level:
-    com:
-      shiji:
-        mapper: debug
+##显示sql语句
+#logging:
+#  level:
+#    com:
+#      shiji:
+#        mapper: debug
