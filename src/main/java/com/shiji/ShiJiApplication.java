@@ -11,6 +11,4 @@ public class ShiJiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ShiJiApplication.class, args);
 	}
-
-
 }
