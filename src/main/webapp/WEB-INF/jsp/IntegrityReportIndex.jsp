@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-	<title>数据导出</title>
+	<title>不完整数据导出</title>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/laydate/laydate.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 	<script>

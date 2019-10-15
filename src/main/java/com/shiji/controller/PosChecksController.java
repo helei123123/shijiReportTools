@@ -1,5 +1,6 @@
 package com.shiji.controller;
 
+import com.shiji.service.PosActionLogsServices;
 import com.shiji.service.PosChecksServices;
 import com.shiji.util.ResultFormat;
 import lombok.extern.slf4j.Slf4j;
@@ -26,6 +27,8 @@ public class PosChecksController {
 
 	@Autowired
 	private PosChecksServices posChecksServices;
+	@Autowired
+	private PosActionLogsServices posActionLogsServices;
 
 	@RequestMapping("/index")
 	public Object index() {
@@ -37,6 +40,10 @@ public class PosChecksController {
 		return "IntegrityReportIndex";
 	}
 
+	@RequestMapping("/logsIndex")
+	public Object logsIndex() {
+		return "logsReportIndex";
+	}
 	@RequestMapping("/excelExport")
 	public Object excelExport(String outletCode, String checkNum, String businessDay, String timeType, String rangTime, Model model) {
 		ResultFormat resultFormat = null;
@@ -80,5 +87,27 @@ public class PosChecksController {
 		}
 		model.addAttribute("Results", resultFormat);
 		return "IntegrityReportIndex";
+	}
+
+	@RequestMapping("/logsReport")
+	public Object logsReport(String businessDayRang,String checkNum,Model model){
+		ResultFormat resultFormat = null;
+		try {
+			resultFormat =  posActionLogsServices.findByBusinessDayAndCheckNum(businessDayRang,checkNum);
+		}catch (FileNotFoundException e) {
+			resultFormat = new ResultFormat(3, null, null);
+			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
+			resultFormat = new ResultFormat(5, null, null);
+		} catch (IOException e) {
+			e.printStackTrace();
+			resultFormat = new ResultFormat(4, null, null);
+		} catch (Exception e) {
+			e.printStackTrace();
+			resultFormat = new ResultFormat(4, null, null);
+		}
+		model.addAttribute("Results", resultFormat);
+		return "logsReportIndex";
 	}
 }

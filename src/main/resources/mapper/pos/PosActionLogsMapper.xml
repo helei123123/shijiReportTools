@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shiji.mapper.pos.PosActionLogsMapper">
+	<resultMap id="BaseResultMap" type="com.shiji.entity.PosActionLogs">
+		<id column="alog_id" jdbcType="CHAR" property="alogId"/>
+		<result column="alog_key" jdbcType="VARCHAR" property="alogKey"/>
+		<result column="alog_user_id" jdbcType="INTEGER" property="alogUserId"/>
+		<result column="alog_action_time" jdbcType="TIMESTAMP" property="alogActionTime"/>
+		<result column="alog_action_loctime" jdbcType="TIMESTAMP" property="alogActionLoctime"/>
+		<result column="alog_action_result" jdbcType="CHAR" property="alogActionResult"/>
+		<result column="alog_table" jdbcType="VARCHAR" property="alogTable"/>
+		<result column="alog_record_id" jdbcType="INTEGER" property="alogRecordId"/>
+		<result column="alog_shop_id" jdbcType="INTEGER" property="alogShopId"/>
+		<result column="alog_olet_id" jdbcType="INTEGER" property="alogOletId"/>
+		<result column="alog_bday_id" jdbcType="VARCHAR" property="alogBdayId"/>
+		<result column="alog_bper_id" jdbcType="VARCHAR" property="alogBperId"/>
+		<result column="alog_stat_id" jdbcType="INTEGER" property="alogStatId"/>
+		<result column="alog_chks_id" jdbcType="VARCHAR" property="alogChksId"/>
+		<result column="alog_cpty_id" jdbcType="VARCHAR" property="alogCptyId"/>
+		<result column="alog_citm_id" jdbcType="VARCHAR" property="alogCitmId"/>
+		<result column="alog_cdis_id" jdbcType="VARCHAR" property="alogCdisId"/>
+		<result column="alog_cpay_id" jdbcType="VARCHAR" property="alogCpayId"/>
+		<result column="alog_slave_id" jdbcType="INTEGER" property="alogSlaveId"/>
+		<result column="alog_slave_created" jdbcType="TIMESTAMP" property="alogSlaveCreated"/>
+		<result column="alog_slave_modified" jdbcType="TIMESTAMP" property="alogSlaveModified"/>
+		<result column="alog_sync_id" jdbcType="INTEGER" property="alogSyncId"/>
+		<result column="created" jdbcType="TIMESTAMP" property="created"/>
+		<result column="modified" jdbcType="TIMESTAMP" property="modified"/>
+		<result column="alog_remark" jdbcType="LONGVARCHAR" property="alogRemark"/>
+	</resultMap>
+
+	<sql id="posActionLogsField">
+		alog_id, alog_key, alog_user_id,
+		alog_action_time, alog_action_loctime,
+		alog_action_result, alog_table, alog_record_id,
+		alog_shop_id, alog_olet_id, alog_bday_id,
+		alog_bper_id, alog_stat_id, alog_chks_id,
+		alog_cpty_id, alog_citm_id, alog_cdis_id,
+		alog_cpay_id, alog_slave_id, alog_slave_created,
+		alog_slave_modified, alog_sync_id, created,
+		modified, alog_remark
+	</sql>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from pos_action_logs
+		where alog_id = #{alogId,jdbcType=CHAR}
+	</delete>
+	<insert id="insert" parameterType="com.shiji.entity.PosActionLogs">
+		insert into pos_action_logs (alog_id, alog_key, alog_user_id,
+		alog_action_time, alog_action_loctime,
+		alog_action_result, alog_table, alog_record_id,
+		alog_shop_id, alog_olet_id, alog_bday_id,
+		alog_bper_id, alog_stat_id, alog_chks_id,
+		alog_cpty_id, alog_citm_id, alog_cdis_id,
+		alog_cpay_id, alog_slave_id, alog_slave_created,
+		alog_slave_modified, alog_sync_id, created,
+		modified, alog_remark)
+		values (#{alogId,jdbcType=CHAR}, #{alogKey,jdbcType=VARCHAR}, #{alogUserId,jdbcType=INTEGER},
+		#{alogActionTime,jdbcType=TIMESTAMP}, #{alogActionLoctime,jdbcType=TIMESTAMP},
+		#{alogActionResult,jdbcType=CHAR}, #{alogTable,jdbcType=VARCHAR}, #{alogRecordId,jdbcType=INTEGER},
+		#{alogShopId,jdbcType=INTEGER}, #{alogOletId,jdbcType=INTEGER}, #{alogBdayId,jdbcType=VARCHAR},
+		#{alogBperId,jdbcType=VARCHAR}, #{alogStatId,jdbcType=INTEGER}, #{alogChksId,jdbcType=VARCHAR},
+		#{alogCptyId,jdbcType=VARCHAR}, #{alogCitmId,jdbcType=VARCHAR}, #{alogCdisId,jdbcType=VARCHAR},
+		#{alogCpayId,jdbcType=VARCHAR}, #{alogSlaveId,jdbcType=INTEGER}, #{alogSlaveCreated,jdbcType=TIMESTAMP},
+		#{alogSlaveModified,jdbcType=TIMESTAMP}, #{alogSyncId,jdbcType=INTEGER}, #{created,jdbcType=TIMESTAMP},
+		#{modified,jdbcType=TIMESTAMP}, #{alogRemark,jdbcType=LONGVARCHAR})
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="com.shiji.entity.PosActionLogs">
+		update pos_action_logs
+		set alog_key = #{alogKey,jdbcType=VARCHAR},
+		alog_user_id = #{alogUserId,jdbcType=INTEGER},
+		alog_action_time = #{alogActionTime,jdbcType=TIMESTAMP},
+		alog_action_loctime = #{alogActionLoctime,jdbcType=TIMESTAMP},
+		alog_action_result = #{alogActionResult,jdbcType=CHAR},
+		alog_table = #{alogTable,jdbcType=VARCHAR},
+		alog_record_id = #{alogRecordId,jdbcType=INTEGER},
+		alog_shop_id = #{alogShopId,jdbcType=INTEGER},
+		alog_olet_id = #{alogOletId,jdbcType=INTEGER},
+		alog_bday_id = #{alogBdayId,jdbcType=VARCHAR},
+		alog_bper_id = #{alogBperId,jdbcType=VARCHAR},
+		alog_stat_id = #{alogStatId,jdbcType=INTEGER},
+		alog_chks_id = #{alogChksId,jdbcType=VARCHAR},
+		alog_cpty_id = #{alogCptyId,jdbcType=VARCHAR},
+		alog_citm_id = #{alogCitmId,jdbcType=VARCHAR},
+		alog_cdis_id = #{alogCdisId,jdbcType=VARCHAR},
+		alog_cpay_id = #{alogCpayId,jdbcType=VARCHAR},
+		alog_slave_id = #{alogSlaveId,jdbcType=INTEGER},
+		alog_slave_created = #{alogSlaveCreated,jdbcType=TIMESTAMP},
+		alog_slave_modified = #{alogSlaveModified,jdbcType=TIMESTAMP},
+		alog_sync_id = #{alogSyncId,jdbcType=INTEGER},
+		created = #{created,jdbcType=TIMESTAMP},
+		modified = #{modified,jdbcType=TIMESTAMP},
+		alog_remark = #{alogRemark,jdbcType=LONGVARCHAR}
+		where alog_id = #{alogId,jdbcType=CHAR}
+	</update>
+	<select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+		select alog_id, alog_key, alog_user_id, alog_action_time, alog_action_loctime, alog_action_result,
+		alog_table, alog_record_id, alog_shop_id, alog_olet_id, alog_bday_id, alog_bper_id,
+		alog_stat_id, alog_chks_id, alog_cpty_id, alog_citm_id, alog_cdis_id, alog_cpay_id,
+		alog_slave_id, alog_slave_created, alog_slave_modified, alog_sync_id, created, modified,
+		alog_remark
+		from pos_action_logs
+		where alog_id = #{alogId,jdbcType=CHAR}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select alog_id, alog_key, alog_user_id, alog_action_time, alog_action_loctime, alog_action_result,
+		alog_table, alog_record_id, alog_shop_id, alog_olet_id, alog_bday_id, alog_bper_id,
+		alog_stat_id, alog_chks_id, alog_cpty_id, alog_citm_id, alog_cdis_id, alog_cpay_id,
+		alog_slave_id, alog_slave_created, alog_slave_modified, alog_sync_id, created, modified,
+		alog_remark
+		from pos_action_logs
+	</select>
+	<select id="findByBusinessDayAndCheckNum" resultType="java.util.Map">
+		select
+		<include refid="posActionLogsField"/>
+		FROM pos_action_logs where 1=1
+		<if test="beginDate!=null">
+			and alog_bday_id in (select bday_id FROM pos_business_days where bday_date &gt;=#{beginDate} and bday_date
+			&lt;=#{endDate})
+		</if>
+		<if test="checkNum!=null">
+			and alog_chks_id = (select chks_id from pos_checks where chks_check_prefix_num=#{checkNum})
+		</if>
+	</select>
+</mapper>

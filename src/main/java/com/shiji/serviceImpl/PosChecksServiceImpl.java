@@ -176,9 +176,8 @@ public class PosChecksServiceImpl implements PosChecksServices {
 		List<String> sDayIds = posBusinessDaysServices.findByDayId(businessDayBeginDate, businessDayEndDate);
 		Date CheckBeginTime = null;
 		Date CheckEndTime = null;
-		if (sDayIds == null || sDayIds.size() == 0) {
+		if (sDayIds == null || sDayIds.size() == 0)
 			return new ResultFormat(1, "当前的营业日不存在!", null);
-		}
 		if (!StringUtils.isEmpty(rangTime)) {
 			CheckBeginTime = sdf1.parse(businessDayBeginDate.toString() + " " + rangTime.split("-")[0]);
 			CheckEndTime = sdf1.parse(businessDayBeginDate.toString() + " " + rangTime.split("-")[1]);

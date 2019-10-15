@@ -7,58 +7,17 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-	<title>数据导出</title>
+	<title>日志数据导出</title>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/laydate/laydate.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 	<script>
 		lay('#version').html('-v'+ laydate.v);
-
 		//执行一个laydate实例
-		//常规用法
-		laydate.render({
-		  elem: '#test1' //指定元素
-		});
-		//国际版
-		laydate.render({
-		  elem: '#test1-1'
-		  ,lang: 'en'
-		});
-		//年选择器
-		laydate.render({
-		  elem: '#test2'
-		  ,type: 'year'
-		});
-		//年月选择器
-		laydate.render({
-		  elem: '#test3'
-		  ,type: 'month'
-		});
-		//时间选择器
-		laydate.render({
-		  elem: '#test4'
-		  ,type: 'time'
-		});
-		//时间选择器
-		laydate.render({
-		  elem: '#test5'
-		  ,type: 'datetime'
-		});
 		//日期范围
 		laydate.render({
 		  elem: '#test6'
 		  ,range: true
-		});
-		//年范围
-		laydate.render({
-		  elem: '#test7'
-		  ,type: 'year'
-		  ,range: true
-		});
-		//年月范围
-		laydate.render({
-		  elem: '#test8'
-		  ,type: 'month'
-		  ,range: true
+		  ,lang: 'en'
 		});
 		//时间范围
 		laydate.render({
@@ -66,28 +25,6 @@
 		  ,type: 'time'
 		  ,lang: 'en'
 		  ,range: true
-		});
-		//日期时间范围
-		laydate.render({
-		  elem: '#test10'
-		  ,type: 'datetime'
-		  ,lang:'en'
-		  ,range: true
-		});
-		//墨绿主题
-		laydate.render({
-		  elem: '#test29'
-		  ,theme: 'molv'
-		});
-		//自定义颜色
-		laydate.render({
-		  elem: '#test30'
-		  ,theme: '#393D49'
-		});
-		//格子主题
-		laydate.render({
-		  elem: '#test31'
-		  ,theme: 'grid'
 		});
 
 	</script>
@@ -97,23 +34,11 @@
 	</style>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath}/export/excelExport" method="post">
+	<form action="${pageContext.request.contextPath}/export/logsReport" method="post">
 						<table align="center" border="0">
 								<tr>
-									<td>请输入营业日:</td>
-									<td><input type="text" class="shiji-input" placeholder="年月日选择" id="test1-1" name="businessDay" readOnly ></td>
-								</tr>
-								<tr>
-									<td>请选择时间范围:</td>
-									<td><input type="text" class="shiji-input" placeholder="时间范围" id="test9" name="rangTime" readOnly></td>
-									</tr>
-									<tr>
-									<td>请选择时间类型:</td>
-									<td><input type="radio" name="timeType" value="1" checked>open time<input type="radio" value="2" name="timeType">close time</td>
-									</tr>
-								<tr>
-									<td>请输入营业区编码:</td>
-									<td><input type="text" class="shiji-input" placeholder="请输入营业区编码" name="outletCode"></td>
+									<td>请选择营业日范围:</td>
+									<td><input type="text" class="shiji-input" placeholder="年月日选择" id="test6" name="businessDayRang" readOnly ></td>
 								</tr>
 								<tr>
 									<td>请输入账单编号:</td>
@@ -128,7 +53,7 @@
 <script>
 		var responseCode =${Results.status};
 		if(responseCode==0)
-			alert("营业区编码不存在!");
+			alert("请选择营业日!");
 		else if(responseCode==1)
 			 alert("营业日不存在!");
 		else if(responseCode==2)
